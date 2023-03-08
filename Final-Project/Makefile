@@ -1,0 +1,7 @@
+# CSE x25 Final Project
+TOP_MODULE = graycounter
+SYNTH_SOURCES += $(TOP_MODULE).sv
+NONSYNTH_SOURCES += ../../provided_modules/nonsynth_clock_gen.sv
+NONSYNTH_SOURCES += ../../provided_modules/nonsynth_reset_gen.sv
+-include ../../simulation.mk
+
