@@ -34,6 +34,7 @@ class Vtestbench__Syms final : public VerilatedSyms {
 
     // SCOPE NAMES
     VerilatedScope __Vscope_testbench__cg;
+    VerilatedScope __Vscope_testbench__dut__cg;
 
     // CONSTRUCTORS
     Vtestbench__Syms(VerilatedContext* contextp, const char* namep, Vtestbench* modelp);

@@ -33,7 +33,7 @@ initial begin
 `endif
       $dumpvars;
       
-#1000
+#1000000
 $finish();
 end
 endmodule

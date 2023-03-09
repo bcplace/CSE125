@@ -20,7 +20,7 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+/* verilator lint_off WIDTH */
 module axis_i2s2 (
     input  wire        axis_clk, // require: approx 22.591MHz
     input  wire        axis_resetn,

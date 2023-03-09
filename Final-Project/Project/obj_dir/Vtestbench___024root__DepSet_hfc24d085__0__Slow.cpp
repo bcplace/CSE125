@@ -14,6 +14,8 @@ VL_ATTR_COLD void Vtestbench___024root___eval_initial__TOP(Vtestbench___024root*
     // Body
     VL_WRITEF("%Ntestbench.cg with cycle_time_p          10\n",
               vlSymsp->name());
+    VL_WRITEF("%Ntestbench.dut.cg with cycle_time_p          44\n",
+              vlSymsp->name());
     VL_READMEM_N(true, 24, 32, 0, std::string{"sine.hex"}
                  ,  &(vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__mem)
                  , 0U, ~0ULL);

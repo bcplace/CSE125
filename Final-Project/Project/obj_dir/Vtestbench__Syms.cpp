@@ -50,4 +50,5 @@ Vtestbench__Syms::Vtestbench__Syms(VerilatedContext* contextp, const char* namep
     TOP.__Vconfigure(true);
     // Setup scopes
     __Vscope_testbench__cg.configure(this, name(), "testbench.cg", "cg", -9, VerilatedScope::SCOPE_OTHER);
+    __Vscope_testbench__dut__cg.configure(this, name(), "testbench.dut.cg", "cg", -9, VerilatedScope::SCOPE_OTHER);
 }
