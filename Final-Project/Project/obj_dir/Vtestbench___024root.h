@@ -16,7 +16,6 @@ class Vtestbench___024root final : public VerilatedModule {
     // DESIGN SPECIFIC STATE
     CData/*0:0*/ testbench__DOT__clk_i;
     CData/*0:0*/ testbench__DOT__reset_i;
-    CData/*0:0*/ testbench__DOT__dut__DOT__tx_lr_clk_o;
     CData/*0:0*/ testbench__DOT__dut__DOT__clk_o;
     CData/*0:0*/ testbench__DOT__rg__DOT__ctr_lo_r;
     CData/*3:0*/ testbench__DOT__rg__DOT__ctr_hi_r;
@@ -38,9 +37,9 @@ class Vtestbench___024root final : public VerilatedModule {
     CData/*0:0*/ __Vtrigrprev__TOP__testbench__DOT__clk_i;
     CData/*0:0*/ __Vtrigrprev__TOP__testbench__DOT__reset_i;
     CData/*0:0*/ __Vtrigrprev__TOP__testbench__DOT__dut__DOT__clk_o;
-    CData/*0:0*/ __Vtrigrprev__TOP__testbench__DOT__dut__DOT__tx_lr_clk_o;
     CData/*0:0*/ __VactContinue;
     SData/*8:0*/ testbench__DOT__dut__DOT__i2s2_inst__DOT__count;
+    IData/*23:0*/ testbench__DOT__dut__DOT__axis_tx_data;
     IData/*31:0*/ testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l;
     IData/*31:0*/ testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_r;
     IData/*23:0*/ testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l_shift;
@@ -50,15 +49,14 @@ class Vtestbench___024root final : public VerilatedModule {
     IData/*31:0*/ testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_l;
     IData/*31:0*/ testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_r;
     IData/*31:0*/ testbench__DOT__dut__DOT__sinegen__DOT__phase_l;
-    IData/*31:0*/ __Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l;
     IData/*31:0*/ __VstlIterCount;
     IData/*31:0*/ __VactIterCount;
     VlUnpacked<IData/*23:0*/, 32> testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__mem;
     VlUnpacked<CData/*0:0*/, 4> __Vm_traceActivity;
     VlDelayScheduler __VdlySched;
     VlTriggerVec<1> __VstlTriggered;
-    VlTriggerVec<6> __VactTriggered;
-    VlTriggerVec<6> __VnbaTriggered;
+    VlTriggerVec<5> __VactTriggered;
+    VlTriggerVec<5> __VnbaTriggered;
 
     // INTERNAL VARIABLES
     Vtestbench__Syms* const vlSymsp;

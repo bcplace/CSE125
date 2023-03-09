@@ -29,8 +29,2305 @@ Parsing SystemVerilog input from `top.sv' to AST representation.
 Storing AST representation for module `$abstract\top'.
 Successfully finished Verilog frontend.
 
--- Parsing `top.sv' using frontend ` -sv' --
+-- Parsing `sine.sv' using frontend ` -sv' --
 
-2. Executing Verilog-2005 frontend: top.sv
-Parsing SystemVerilog input from `top.sv' to AST representation.
-top.sv:2: ERROR: Re-definition of module `$abstract\top'!
+2. Executing Verilog-2005 frontend: sine.sv
+Parsing SystemVerilog input from `sine.sv' to AST representation.
+Storing AST representation for module `$abstract\sine'.
+Successfully finished Verilog frontend.
+
+-- Parsing `../../provided_modules/axis_i2s2.v' using frontend ` -vlog2k' --
+
+3. Executing Verilog-2005 frontend: ../../provided_modules/axis_i2s2.v
+Parsing Verilog input from `../../provided_modules/axis_i2s2.v' to AST representation.
+Storing AST representation for module `$abstract\axis_i2s2'.
+Successfully finished Verilog frontend.
+
+-- Parsing `../../provided_modules/inv.sv' using frontend ` -sv' --
+
+4. Executing Verilog-2005 frontend: ../../provided_modules/inv.sv
+Parsing SystemVerilog input from `../../provided_modules/inv.sv' to AST representation.
+Storing AST representation for module `$abstract\inv'.
+Successfully finished Verilog frontend.
+
+-- Parsing `../../provided_modules/dff.sv' using frontend ` -sv' --
+
+5. Executing Verilog-2005 frontend: ../../provided_modules/dff.sv
+Parsing SystemVerilog input from `../../provided_modules/dff.sv' to AST representation.
+Storing AST representation for module `$abstract\dff'.
+Successfully finished Verilog frontend.
+
+-- Parsing `ram_1r1w_sync.sv' using frontend ` -sv' --
+
+6. Executing Verilog-2005 frontend: ram_1r1w_sync.sv
+Parsing SystemVerilog input from `ram_1r1w_sync.sv' to AST representation.
+Storing AST representation for module `$abstract\ram_1r1w_sync'.
+Successfully finished Verilog frontend.
+
+-- Running command `synth_ice40 -top top -json top.json' --
+
+7. Executing SYNTH_ICE40 pass.
+
+7.1. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Generating RTLIL representation for module `\ICESTORM_RAM'.
+Successfully finished Verilog frontend.
+
+7.2. Executing HIERARCHY pass (managing design hierarchy).
+
+7.3. Executing AST frontend in derive mode using pre-parsed AST for module `\top'.
+Generating RTLIL representation for module `\top'.
+
+7.3.1. Analyzing design hierarchy..
+Top module:  \top
+
+7.3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\sine'.
+Generating RTLIL representation for module `\sine'.
+
+7.3.3. Executing AST frontend in derive mode using pre-parsed AST for module `\axis_i2s2'.
+Generating RTLIL representation for module `\axis_i2s2'.
+Note: Assuming pure combinatorial block at ../../provided_modules/axis_i2s2.v:102.5-109.29 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+
+7.3.4. Executing AST frontend in derive mode using pre-parsed AST for module `\dff'.
+Generating RTLIL representation for module `\dff'.
+
+7.3.5. Executing AST frontend in derive mode using pre-parsed AST for module `\inv'.
+Generating RTLIL representation for module `\inv'.
+
+7.3.6. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \sine
+Used module:     \axis_i2s2
+Used module:     \dff
+Used module:     \inv
+Parameter \width_p = 24
+Parameter \depth_p = 32
+Parameter \filename_p = 64'0111001101101001011011100110010100101110011010000110010101111000
+
+7.3.7. Executing AST frontend in derive mode using pre-parsed AST for module `\ram_1r1w_sync'.
+Parameter \width_p = 24
+Parameter \depth_p = 32
+Parameter \filename_p = 64'0111001101101001011011100110010100101110011010000110010101111000
+Generating RTLIL representation for module `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync'.
+
+7.3.8. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \sine
+Used module:         $paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync
+Used module:     \axis_i2s2
+Used module:     \dff
+Used module:     \inv
+
+7.3.9. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \sine
+Used module:         $paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync
+Used module:     \axis_i2s2
+Used module:     \dff
+Used module:     \inv
+Removing unused module `$abstract\ram_1r1w_sync'.
+Removing unused module `$abstract\dff'.
+Removing unused module `$abstract\inv'.
+Removing unused module `$abstract\axis_i2s2'.
+Removing unused module `$abstract\sine'.
+Removing unused module `$abstract\top'.
+Removed 6 unused modules.
+Warning: Resizing cell port top.i2s2_inst.rx_axis_p_data from 24 bits to 32 bits.
+Warning: Resizing cell port top.i2s2_inst.tx_axis_c_data from 24 bits to 32 bits.
+
+7.4. Executing PROC pass (convert processes to netlists).
+
+7.4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$proc$ram_1r1w_sync.sv:0$476'.
+Cleaned up 0 empty switches.
+
+7.4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241 in module SB_DFFNES.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$234 in module SB_DFFNESS.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230 in module SB_DFFNER.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$223 in module SB_DFFNESR.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$220 in module SB_DFFNS.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$217 in module SB_DFFNSS.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$214 in module SB_DFFNR.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$211 in module SB_DFFNSR.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203 in module SB_DFFES.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$196 in module SB_DFFESS.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192 in module SB_DFFER.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$185 in module SB_DFFESR.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$182 in module SB_DFFS.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$179 in module SB_DFFSS.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$176 in module SB_DFFR.
+Marked 1 switch rules as full_case in process $proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$173 in module SB_DFFSR.
+Marked 1 switch rules as full_case in process $proc$ram_1r1w_sync.sv:34$468 in module $paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.
+Marked 1 switch rules as full_case in process $proc$../../provided_modules/dff.sv:21$463 in module dff.
+Marked 2 switch rules as full_case in process $proc$../../provided_modules/axis_i2s2.v:149$441 in module axis_i2s2.
+Marked 2 switch rules as full_case in process $proc$../../provided_modules/axis_i2s2.v:141$431 in module axis_i2s2.
+Marked 1 switch rules as full_case in process $proc$../../provided_modules/axis_i2s2.v:130$424 in module axis_i2s2.
+Marked 1 switch rules as full_case in process $proc$../../provided_modules/axis_i2s2.v:120$417 in module axis_i2s2.
+Marked 2 switch rules as full_case in process $proc$../../provided_modules/axis_i2s2.v:102$411 in module axis_i2s2.
+Marked 2 switch rules as full_case in process $proc$../../provided_modules/axis_i2s2.v:91$403 in module axis_i2s2.
+Marked 2 switch rules as full_case in process $proc$../../provided_modules/axis_i2s2.v:77$397 in module axis_i2s2.
+Marked 3 switch rules as full_case in process $proc$../../provided_modules/axis_i2s2.v:67$388 in module axis_i2s2.
+Marked 1 switch rules as full_case in process $proc$sine.sv:25$382 in module sine.
+Removed a total of 0 dead cases.
+
+7.4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 10 redundant assignments.
+Promoted 43 assignments to connections.
+
+7.4.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SB_DFFNES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$244'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$240'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$233'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$229'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$222'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$219'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$216'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$213'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$210'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFN.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$208'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$206'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$202'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$195'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$191'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$184'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$181'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$178'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$175'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$172'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFF.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$170'.
+  Set init value: \Q = 1'0
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:129$462'.
+  Set init value: \rx_data_r = 0
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:128$461'.
+  Set init value: \rx_data_l = 0
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:119$460'.
+  Set init value: \rx_data_r_shift = 24'000000000000000000000000
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:118$459'.
+  Set init value: \rx_data_l_shift = 24'000000000000000000000000
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:112$458'.
+  Set init value: \din_sync_shift = 3'000
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:89$457'.
+  Set init value: \tx_data_r_shift = 24'000000000000000000000000
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:88$456'.
+  Set init value: \tx_data_l_shift = 24'000000000000000000000000
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:65$455'.
+  Set init value: \tx_data_r = 0
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:64$454'.
+  Set init value: \tx_data_l = 0
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:47$453'.
+  Set init value: \count = 9'000000000
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:0$452'.
+  Set init value: \rx_axis_p_last = 1'0
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:0$451'.
+  Set init value: \rx_axis_p_valid = 1'0
+Found init rule in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:0$450'.
+  Set init value: \tx_axis_c_ready = 1'0
+Found init rule in `\sine.$proc$sine.sv:17$385'.
+  Set init value: \phase_l = 0
+
+7.4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \S in `\SB_DFFNES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
+Found async reset \R in `\SB_DFFNER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
+Found async reset \S in `\SB_DFFNS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
+Found async reset \R in `\SB_DFFNR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
+Found async reset \S in `\SB_DFFES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203'.
+Found async reset \R in `\SB_DFFER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192'.
+Found async reset \S in `\SB_DFFS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$182'.
+Found async reset \R in `\SB_DFFR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$176'.
+
+7.4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~43 debug messages>
+
+7.4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SB_DFFNES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$244'.
+Creating decoders for process `\SB_DFFNES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$240'.
+Creating decoders for process `\SB_DFFNESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$233'.
+Creating decoders for process `\SB_DFFNER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$229'.
+Creating decoders for process `\SB_DFFNESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$222'.
+Creating decoders for process `\SB_DFFNS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$219'.
+Creating decoders for process `\SB_DFFNSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$216'.
+Creating decoders for process `\SB_DFFNR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$213'.
+Creating decoders for process `\SB_DFFNSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$211'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$210'.
+Creating decoders for process `\SB_DFFNE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$209'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFN.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$208'.
+Creating decoders for process `\SB_DFFN.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$207'.
+Creating decoders for process `\SB_DFFES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$206'.
+Creating decoders for process `\SB_DFFES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$202'.
+Creating decoders for process `\SB_DFFESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$196'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$195'.
+Creating decoders for process `\SB_DFFER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$191'.
+Creating decoders for process `\SB_DFFESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$185'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$184'.
+Creating decoders for process `\SB_DFFS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$182'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$181'.
+Creating decoders for process `\SB_DFFSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$179'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$178'.
+Creating decoders for process `\SB_DFFR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$176'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$175'.
+Creating decoders for process `\SB_DFFSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$173'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$172'.
+Creating decoders for process `\SB_DFFE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$171'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFF.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$170'.
+Creating decoders for process `\SB_DFF.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$169'.
+Creating decoders for process `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$proc$ram_1r1w_sync.sv:34$468'.
+     1/3: $1$memwr$\mem$ram_1r1w_sync.sv:36$465_EN[23:0]$474
+     2/3: $1$memwr$\mem$ram_1r1w_sync.sv:36$465_DATA[23:0]$473
+     3/3: $1$memwr$\mem$ram_1r1w_sync.sv:36$465_ADDR[4:0]$472
+Creating decoders for process `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$proc$ram_1r1w_sync.sv:29$466'.
+Creating decoders for process `\dff.$proc$../../provided_modules/dff.sv:21$463'.
+     1/1: $0\q_r[0:0]
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:129$462'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:128$461'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:119$460'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:118$459'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:112$458'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:89$457'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:88$456'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:65$455'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:64$454'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:47$453'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:0$452'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:0$451'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:0$450'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:149$441'.
+     1/1: $0\rx_axis_p_last[0:0]
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:141$431'.
+     1/1: $0\rx_axis_p_valid[0:0]
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:130$424'.
+     1/2: $0\rx_data_r[31:0]
+     2/2: $0\rx_data_l[31:0]
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:120$417'.
+     1/2: $0\rx_data_r_shift[23:0]
+     2/2: $0\rx_data_l_shift[23:0]
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:114$416'.
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:102$411'.
+     1/2: $2\tx_sdout[0:0]
+     2/2: $1\tx_sdout[0:0]
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:91$403'.
+     1/2: $0\tx_data_r_shift[23:0]
+     2/2: $0\tx_data_l_shift[23:0]
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:77$397'.
+     1/2: $0\tx_data_r[31:0]
+     2/2: $0\tx_data_l[31:0]
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:67$388'.
+     1/1: $0\tx_axis_c_ready[0:0]
+Creating decoders for process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:50$386'.
+Creating decoders for process `\sine.$proc$sine.sv:17$385'.
+Creating decoders for process `\sine.$proc$sine.sv:25$382'.
+     1/2: $0\valid_o_l[0:0]
+     2/2: $0\phase_l[31:0]
+
+7.4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\axis_i2s2.\tx_sdout' from process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:102$411'.
+
+7.4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SB_DFFNES.\Q' using process `\SB_DFFNES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
+  created $adff cell `$procdff$628' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESS.\Q' using process `\SB_DFFNESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
+  created $dff cell `$procdff$629' with negative edge clock.
+Creating register for signal `\SB_DFFNER.\Q' using process `\SB_DFFNER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
+  created $adff cell `$procdff$630' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESR.\Q' using process `\SB_DFFNESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
+  created $dff cell `$procdff$631' with negative edge clock.
+Creating register for signal `\SB_DFFNS.\Q' using process `\SB_DFFNS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
+  created $adff cell `$procdff$632' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSS.\Q' using process `\SB_DFFNSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
+  created $dff cell `$procdff$633' with negative edge clock.
+Creating register for signal `\SB_DFFNR.\Q' using process `\SB_DFFNR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
+  created $adff cell `$procdff$634' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSR.\Q' using process `\SB_DFFNSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$211'.
+  created $dff cell `$procdff$635' with negative edge clock.
+Creating register for signal `\SB_DFFNE.\Q' using process `\SB_DFFNE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$209'.
+  created $dff cell `$procdff$636' with negative edge clock.
+Creating register for signal `\SB_DFFN.\Q' using process `\SB_DFFN.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$207'.
+  created $dff cell `$procdff$637' with negative edge clock.
+Creating register for signal `\SB_DFFES.\Q' using process `\SB_DFFES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203'.
+  created $adff cell `$procdff$638' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESS.\Q' using process `\SB_DFFESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$196'.
+  created $dff cell `$procdff$639' with positive edge clock.
+Creating register for signal `\SB_DFFER.\Q' using process `\SB_DFFER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192'.
+  created $adff cell `$procdff$640' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESR.\Q' using process `\SB_DFFESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$185'.
+  created $dff cell `$procdff$641' with positive edge clock.
+Creating register for signal `\SB_DFFS.\Q' using process `\SB_DFFS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$182'.
+  created $adff cell `$procdff$642' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSS.\Q' using process `\SB_DFFSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$179'.
+  created $dff cell `$procdff$643' with positive edge clock.
+Creating register for signal `\SB_DFFR.\Q' using process `\SB_DFFR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$176'.
+  created $adff cell `$procdff$644' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSR.\Q' using process `\SB_DFFSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$173'.
+  created $dff cell `$procdff$645' with positive edge clock.
+Creating register for signal `\SB_DFFE.\Q' using process `\SB_DFFE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$171'.
+  created $dff cell `$procdff$646' with positive edge clock.
+Creating register for signal `\SB_DFF.\Q' using process `\SB_DFF.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$169'.
+  created $dff cell `$procdff$647' with positive edge clock.
+Creating register for signal `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$memwr$\mem$ram_1r1w_sync.sv:36$465_ADDR' using process `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$proc$ram_1r1w_sync.sv:34$468'.
+  created $dff cell `$procdff$648' with positive edge clock.
+Creating register for signal `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$memwr$\mem$ram_1r1w_sync.sv:36$465_DATA' using process `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$proc$ram_1r1w_sync.sv:34$468'.
+  created $dff cell `$procdff$649' with positive edge clock.
+Creating register for signal `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$memwr$\mem$ram_1r1w_sync.sv:36$465_EN' using process `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$proc$ram_1r1w_sync.sv:34$468'.
+  created $dff cell `$procdff$650' with positive edge clock.
+Creating register for signal `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.\read_addr_l' using process `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$proc$ram_1r1w_sync.sv:29$466'.
+  created $dff cell `$procdff$651' with positive edge clock.
+Creating register for signal `\dff.\q_r' using process `\dff.$proc$../../provided_modules/dff.sv:21$463'.
+  created $dff cell `$procdff$652' with positive edge clock.
+Creating register for signal `\axis_i2s2.\rx_axis_p_last' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:149$441'.
+  created $dff cell `$procdff$653' with positive edge clock.
+Creating register for signal `\axis_i2s2.\rx_axis_p_valid' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:141$431'.
+  created $dff cell `$procdff$654' with positive edge clock.
+Creating register for signal `\axis_i2s2.\rx_data_l' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:130$424'.
+  created $dff cell `$procdff$655' with positive edge clock.
+Creating register for signal `\axis_i2s2.\rx_data_r' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:130$424'.
+  created $dff cell `$procdff$656' with positive edge clock.
+Creating register for signal `\axis_i2s2.\rx_data_l_shift' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:120$417'.
+  created $dff cell `$procdff$657' with positive edge clock.
+Creating register for signal `\axis_i2s2.\rx_data_r_shift' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:120$417'.
+  created $dff cell `$procdff$658' with positive edge clock.
+Creating register for signal `\axis_i2s2.\din_sync_shift' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:114$416'.
+  created $dff cell `$procdff$659' with positive edge clock.
+Creating register for signal `\axis_i2s2.\tx_data_l_shift' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:91$403'.
+  created $dff cell `$procdff$660' with positive edge clock.
+Creating register for signal `\axis_i2s2.\tx_data_r_shift' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:91$403'.
+  created $dff cell `$procdff$661' with positive edge clock.
+Creating register for signal `\axis_i2s2.\tx_data_l' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:77$397'.
+  created $dff cell `$procdff$662' with positive edge clock.
+Creating register for signal `\axis_i2s2.\tx_data_r' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:77$397'.
+  created $dff cell `$procdff$663' with positive edge clock.
+Creating register for signal `\axis_i2s2.\tx_axis_c_ready' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:67$388'.
+  created $dff cell `$procdff$664' with positive edge clock.
+Creating register for signal `\axis_i2s2.\count' using process `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:50$386'.
+  created $dff cell `$procdff$665' with positive edge clock.
+Creating register for signal `\sine.\phase_l' using process `\sine.$proc$sine.sv:25$382'.
+  created $dff cell `$procdff$666' with positive edge clock.
+Creating register for signal `\sine.\valid_o_l' using process `\sine.$proc$sine.sv:25$382'.
+  created $dff cell `$procdff$667' with positive edge clock.
+
+7.4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+7.4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SB_DFFNES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$244'.
+Found and cleaned up 1 empty switch in `\SB_DFFNES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
+Removing empty process `SB_DFFNES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1414$241'.
+Removing empty process `SB_DFFNESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$240'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
+Removing empty process `SB_DFFNESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1353$234'.
+Removing empty process `SB_DFFNER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$233'.
+Found and cleaned up 1 empty switch in `\SB_DFFNER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
+Removing empty process `SB_DFFNER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1273$230'.
+Removing empty process `SB_DFFNESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$229'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
+Removing empty process `SB_DFFNESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1212$223'.
+Removing empty process `SB_DFFNS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$222'.
+Removing empty process `SB_DFFNS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1138$220'.
+Removing empty process `SB_DFFNSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$219'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
+Removing empty process `SB_DFFNSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1088$217'.
+Removing empty process `SB_DFFNR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$216'.
+Removing empty process `SB_DFFNR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:1017$214'.
+Removing empty process `SB_DFFNSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$213'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$211'.
+Removing empty process `SB_DFFNSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:967$211'.
+Removing empty process `SB_DFFNE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$210'.
+Found and cleaned up 1 empty switch in `\SB_DFFNE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$209'.
+Removing empty process `SB_DFFNE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:922$209'.
+Removing empty process `SB_DFFN.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$208'.
+Removing empty process `SB_DFFN.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:882$207'.
+Removing empty process `SB_DFFES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$206'.
+Found and cleaned up 1 empty switch in `\SB_DFFES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203'.
+Removing empty process `SB_DFFES.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:803$203'.
+Removing empty process `SB_DFFESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$202'.
+Found and cleaned up 2 empty switches in `\SB_DFFESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$196'.
+Removing empty process `SB_DFFESS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:742$196'.
+Removing empty process `SB_DFFER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$195'.
+Found and cleaned up 1 empty switch in `\SB_DFFER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192'.
+Removing empty process `SB_DFFER.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:662$192'.
+Removing empty process `SB_DFFESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$191'.
+Found and cleaned up 2 empty switches in `\SB_DFFESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$185'.
+Removing empty process `SB_DFFESR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:601$185'.
+Removing empty process `SB_DFFS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$184'.
+Removing empty process `SB_DFFS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:527$182'.
+Removing empty process `SB_DFFSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$181'.
+Found and cleaned up 1 empty switch in `\SB_DFFSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$179'.
+Removing empty process `SB_DFFSS.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:477$179'.
+Removing empty process `SB_DFFR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$178'.
+Removing empty process `SB_DFFR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:406$176'.
+Removing empty process `SB_DFFSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$175'.
+Found and cleaned up 1 empty switch in `\SB_DFFSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$173'.
+Removing empty process `SB_DFFSR.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:356$173'.
+Removing empty process `SB_DFFE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$172'.
+Found and cleaned up 1 empty switch in `\SB_DFFE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$171'.
+Removing empty process `SB_DFFE.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:311$171'.
+Removing empty process `SB_DFF.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:0$170'.
+Removing empty process `SB_DFF.$proc$/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:271$169'.
+Found and cleaned up 1 empty switch in `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$proc$ram_1r1w_sync.sv:34$468'.
+Removing empty process `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$proc$ram_1r1w_sync.sv:34$468'.
+Removing empty process `$paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.$proc$ram_1r1w_sync.sv:29$466'.
+Found and cleaned up 1 empty switch in `\dff.$proc$../../provided_modules/dff.sv:21$463'.
+Removing empty process `dff.$proc$../../provided_modules/dff.sv:21$463'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:129$462'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:128$461'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:119$460'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:118$459'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:112$458'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:89$457'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:88$456'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:65$455'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:64$454'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:47$453'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:0$452'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:0$451'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:0$450'.
+Found and cleaned up 3 empty switches in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:149$441'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:149$441'.
+Found and cleaned up 3 empty switches in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:141$431'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:141$431'.
+Found and cleaned up 2 empty switches in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:130$424'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:130$424'.
+Found and cleaned up 2 empty switches in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:120$417'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:120$417'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:114$416'.
+Found and cleaned up 2 empty switches in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:102$411'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:102$411'.
+Found and cleaned up 3 empty switches in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:91$403'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:91$403'.
+Found and cleaned up 3 empty switches in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:77$397'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:77$397'.
+Found and cleaned up 4 empty switches in `\axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:67$388'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:67$388'.
+Removing empty process `axis_i2s2.$proc$../../provided_modules/axis_i2s2.v:50$386'.
+Removing empty process `sine.$proc$sine.sv:17$385'.
+Found and cleaned up 1 empty switch in `\sine.$proc$sine.sv:25$382'.
+Removing empty process `sine.$proc$sine.sv:25$382'.
+Cleaned up 43 empty switches.
+
+7.4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.
+Optimizing module inv.
+Optimizing module dff.
+Optimizing module axis_i2s2.
+<suppressed ~31 debug messages>
+Optimizing module sine.
+Optimizing module top.
+
+7.5. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod$84ab46c4d8f875c6802d235f36d23d000556757d\ram_1r1w_sync.
+Deleting now unused module inv.
+Deleting now unused module dff.
+Deleting now unused module axis_i2s2.
+Deleting now unused module sine.
+<suppressed ~6 debug messages>
+
+7.6. Executing TRIBUF pass.
+
+7.7. Executing DEMINOUT pass (demote inout ports to input or output).
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~22 debug messages>
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 45 unused cells and 167 unused wires.
+<suppressed ~61 debug messages>
+
+7.10. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Warning: Wire top.\led_o [4] is used but has no driver.
+Warning: Wire top.\led_o [3] is used but has no driver.
+Warning: Wire top.\led_o [2] is used but has no driver.
+Warning: Wire top.\led_o [1] is used but has no driver.
+Warning: Wire top.\led_o [0] is used but has no driver.
+Found and reported 5 problems.
+
+7.11. Executing OPT pass (performing simple optimizations).
+
+7.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+7.11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $flatten\i2s2_inst.$procmux$574.
+Removed 1 multiplexer ports.
+<suppressed ~8 debug messages>
+
+7.11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+7.11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.11.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.11.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+7.11.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.11.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.11.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.11.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.11.16. Finished OPT passes. (There is nothing left to do.)
+
+7.12. Executing FSM pass (extract and optimize FSM).
+
+7.12.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking top.i2s2_inst.tx_data_r as FSM state register:
+    Users of register don't seem to benefit from recoding.
+    Register has an initialization value.
+
+7.12.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+7.12.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+7.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.12.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+7.12.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+7.12.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+7.12.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+7.13. Executing OPT pass (performing simple optimizations).
+
+7.13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+7.13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.13.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\sinegen.$procdff$666 ($dff) from module top (D = $flatten\sinegen.$add$sine.sv:28$384_Y, Q = \sinegen.phase_l).
+Adding SRST signal on $flatten\i2s2_inst.$procdff$664 ($dff) from module top (D = $flatten\i2s2_inst.$procmux$611_Y, Q = \i2s2_inst.tx_axis_c_ready, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$670 ($sdff) from module top (D = 1'1, Q = \i2s2_inst.tx_axis_c_ready).
+Adding EN signal on $flatten\i2s2_inst.$procdff$663 ($dff) from module top (D = 0, Q = \i2s2_inst.tx_data_r).
+Adding SRST signal on $flatten\i2s2_inst.$procdff$662 ($dff) from module top (D = $flatten\i2s2_inst.$procmux$606_Y, Q = \i2s2_inst.tx_data_l, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$675 ($sdff) from module top (D = { 8'00000000 \sinegen.LUT.rd_data_o }, Q = \i2s2_inst.tx_data_l).
+Adding EN signal on $flatten\i2s2_inst.$procdff$661 ($dff) from module top (D = $flatten\i2s2_inst.$0\tx_data_r_shift[23:0], Q = \i2s2_inst.tx_data_r_shift).
+Adding EN signal on $flatten\i2s2_inst.$procdff$660 ($dff) from module top (D = $flatten\i2s2_inst.$0\tx_data_l_shift[23:0], Q = \i2s2_inst.tx_data_l_shift).
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$676 ($sdffe) from module top.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$676 ($sdffe) from module top.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$676 ($sdffe) from module top.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$676 ($sdffe) from module top.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$676 ($sdffe) from module top.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$676 ($sdffe) from module top.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$676 ($sdffe) from module top.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$676 ($sdffe) from module top.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 4 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 6 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$674 ($dffe) from module top.
+
+7.13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 7 unused cells and 7 unused wires.
+<suppressed ~8 debug messages>
+
+7.13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~2 debug messages>
+
+7.13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+7.13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+7.13.13. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $auto$ff.cc:266:slice$677 ($dffe) from module top (D = $flatten\i2s2_inst.$procmux$582_Y, Q = \i2s2_inst.tx_data_r_shift, rval = 24'000000000000000000000000).
+
+7.13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 1 unused cells and 2 unused wires.
+<suppressed ~2 debug messages>
+
+7.13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.13.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.13.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+7.13.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.13.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.13.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.13.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.13.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.13.23. Finished OPT passes. (There is nothing left to do.)
+
+7.14. Executing WREDUCE pass (reducing word size of cells).
+Removed top 27 address bits (of 32) from memory init port top.$flatten\sinegen.\LUT.$meminit$\mem$ram_1r1w_sync.sv:0$475 (sinegen.LUT.mem).
+Removed top 2 bits (of 3) from port B of cell top.$auto$opt_dff.cc:195:make_patterns_logic$681 ($ne).
+Removed top 3 bits (of 4) from port B of cell top.$flatten\i2s2_inst.$ge$../../provided_modules/axis_i2s2.v:103$413 ($ge).
+Removed top 4 bits (of 5) from port B of cell top.$flatten\i2s2_inst.$ge$../../provided_modules/axis_i2s2.v:95$406 ($ge).
+Removed top 31 bits (of 32) from port B of cell top.$flatten\i2s2_inst.$add$../../provided_modules/axis_i2s2.v:51$387 ($add).
+Removed top 23 bits (of 32) from port Y of cell top.$flatten\i2s2_inst.$add$../../provided_modules/axis_i2s2.v:51$387 ($add).
+Removed top 4 bits (of 32) from port B of cell top.$flatten\sinegen.$add$sine.sv:28$384 ($add).
+
+7.15. Executing PEEPOPT pass (run peephole optimizers).
+
+7.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+7.17. Executing SHARE pass (SAT-based resource sharing).
+
+7.18. Executing TECHMAP pass (map to technology primitives).
+
+7.18.1. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/opt/oss-cad-suite/lib/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+7.18.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~62 debug messages>
+
+7.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.20. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.21. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module top:
+  creating $macc model for $flatten\i2s2_inst.$add$../../provided_modules/axis_i2s2.v:51$387 ($add).
+  creating $macc model for $flatten\sinegen.$add$sine.sv:28$384 ($add).
+  creating $alu model for $macc $flatten\sinegen.$add$sine.sv:28$384.
+  creating $alu model for $macc $flatten\i2s2_inst.$add$../../provided_modules/axis_i2s2.v:51$387.
+  creating $alu model for $flatten\i2s2_inst.$ge$../../provided_modules/axis_i2s2.v:103$413 ($ge): new $alu
+  creating $alu model for $flatten\i2s2_inst.$ge$../../provided_modules/axis_i2s2.v:95$406 ($ge): merged with $flatten\i2s2_inst.$ge$../../provided_modules/axis_i2s2.v:103$413.
+  creating $alu model for $flatten\i2s2_inst.$le$../../provided_modules/axis_i2s2.v:103$412 ($le): new $alu
+  creating $alu cell for $flatten\i2s2_inst.$le$../../provided_modules/axis_i2s2.v:103$412: $auto$alumacc.cc:485:replace_alu$696
+  creating $alu cell for $flatten\i2s2_inst.$ge$../../provided_modules/axis_i2s2.v:103$413, $flatten\i2s2_inst.$ge$../../provided_modules/axis_i2s2.v:95$406: $auto$alumacc.cc:485:replace_alu$709
+  creating $alu cell for $flatten\i2s2_inst.$add$../../provided_modules/axis_i2s2.v:51$387: $auto$alumacc.cc:485:replace_alu$720
+  creating $alu cell for $flatten\sinegen.$add$sine.sv:28$384: $auto$alumacc.cc:485:replace_alu$723
+  created 4 $alu and 0 $macc cells.
+
+7.22. Executing OPT pass (performing simple optimizations).
+
+7.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+7.22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+7.22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.22.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+7.22.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.22.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.22.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+7.22.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.22.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.22.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.22.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.22.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.22.16. Finished OPT passes. (There is nothing left to do.)
+
+7.23. Executing MEMORY pass.
+
+7.23.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 1 transformations.
+
+7.23.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.23.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+7.23.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.23.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\sinegen.LUT.mem'[0] in module `\top': merging output FF to cell.
+
+7.23.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 1 unused cells and 24 unused wires.
+<suppressed ~2 debug messages>
+
+7.23.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.23.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.23.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.23.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.25. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+using FF mapping for memory top.sinegen.LUT.mem
+<suppressed ~52 debug messages>
+
+7.26. Executing TECHMAP pass (map to technology primitives).
+
+7.26.1. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/opt/oss-cad-suite/lib/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_'.
+Successfully finished Verilog frontend.
+
+7.26.2. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/ice40/spram_map.v
+Parsing Verilog input from `/opt/oss-cad-suite/lib/../share/yosys/ice40/spram_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_SPRAM_'.
+Successfully finished Verilog frontend.
+
+7.26.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+7.27. Executing ICE40_BRAMINIT pass.
+
+7.28. Executing OPT pass (performing simple optimizations).
+
+7.28.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~28 debug messages>
+
+7.28.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.28.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.28.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 1 unused cells and 5 unused wires.
+<suppressed ~2 debug messages>
+
+7.28.5. Finished fast OPT passes.
+
+7.29. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \sinegen.LUT.mem in module \top:
+  created 32 $dff cells and 0 static cells of width 24.
+Extracted data FF from read port 0 of top.sinegen.LUT.mem: $\sinegen.LUT.mem$rdreg[0]
+  read interface: 1 $dff and 31 $mux cells.
+  write interface: 0 write mux blocks.
+
+7.30. Executing OPT pass (performing simple optimizations).
+
+7.30.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+7.30.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][14]$860:
+      Old ports: A=24'101001010111110110000111, B=24'101110001110001100010100, Y=$memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816
+      New ports: A=2'01, B=2'10, Y={ $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [4] $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [23:5] $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [3:1] } = { 3'101 $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [4] $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [4] $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [0] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [0] $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [4] 2'11 $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [0] $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [0] $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [0] $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [4] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [0] 4'0001 $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [0] }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][13]$857:
+      Old ports: A=24'100010011011111001010001, B=24'100101011001001001101000, Y=$memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814
+      New ports: A=2'01, B=2'10, Y={ $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [3] $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [23:4] $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [2:1] } = { 3'100 $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [3] $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [0] $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [3] 4'0110 $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [0] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [0] $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [0] 4'1001 $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [3] $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [0] 2'00 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][12]$854:
+      Old ports: A=24'100000000000000000000000, B=24'100000100111010110100001, Y=$memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813
+      New ports: A=1'0, B=1'1, Y=$memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0]
+      New connections: $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [23:1] = { 6'100000 $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0] 2'00 $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0] $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0] $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0] $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0] 4'0000 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][11]$851:
+      Old ports: A=24'100010011011111001010001, B=24'100000100111010110100001, Y=$memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811
+      New ports: A=2'01, B=2'10, Y=$memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [5:4]
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [23:6] $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [3:0] } = { 4'1000 $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [4] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [5:4] $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [4] $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [5] 2'11 $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [4] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [4] $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [5] $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [5:4] 4'0001 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][10]$848:
+      Old ports: A=24'101001010111110110000111, B=24'100101011001001001101000, Y=$memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810
+      New ports: A=2'01, B=2'10, Y={ $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [3] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [23:4] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [2:1] } = { 2'10 $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [3] 4'0101 $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [3] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [3] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [3] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [3] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][9]$845:
+      Old ports: A=24'110011110000010000111011, B=24'101110001110001100010100, Y=$memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808
+      New ports: A=2'01, B=2'10, Y={ $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [2] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [23:3] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [1] } = { 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [0] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [2] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [2] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [0] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [0] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [0] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [2] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [2] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [2] 2'00 $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [0] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [2] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [2] 2'00 $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [0] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [0] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [0] }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][8]$842:
+      Old ports: A=24'000000000000000000000000, B=24'111001110000011101001000, Y=$memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807
+      New ports: A=1'0, B=1'1, Y=$memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3]
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [23:4] $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [2:0] } = { $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] 2'00 $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] 5'00000 $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] 5'00000 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][7]$839:
+      Old ports: A=24'001100001111101111000101, B=24'000110001111100010111000, Y=$memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805
+      New ports: A=2'01, B=2'10, Y={ $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [3] $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [23:4] $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [2:1] } = { 2'00 $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [0] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [3] 9'000111110 $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [0] $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [0] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [0] $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [3] $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [3] $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][6]$836:
+      Old ports: A=24'010110101000001001111001, B=24'010001110001110011101100, Y=$memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804
+      New ports: A=2'01, B=2'10, Y={ $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [2] $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [23:3] $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [1] } = { 3'010 $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [0] $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [0] $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [2] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [2] $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [0] 2'00 $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [2] $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [2] $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [2] $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [0] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [2] 2'11 $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [0] 2'10 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][5]$833:
+      Old ports: A=24'011101100100000110101111, B=24'011010100110110110011000, Y=$memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802
+      New ports: A=2'01, B=2'10, Y={ $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [4] $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [23:5] $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [3:1] } = { 3'011 $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [0] $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [4] $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [0] 4'1001 $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [4] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [4] $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [4] 4'0110 $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [0] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [0] $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [0] }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][4]$830:
+      Old ports: A=24'011111111111111111111111, B=24'011111011000101001011111, Y=$memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801
+      New ports: A=1'1, B=1'0, Y=$memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [5]
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [23:6] $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [4:0] } = { 6'011111 $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [5] 2'11 $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [5] $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [5] $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [5] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [5] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [5] $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [5] 6'111111 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][3]$827:
+      Old ports: A=24'011101100100000110101111, B=24'011111011000101001011111, Y=$memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799
+      New ports: A=2'10, B=2'01, Y=$memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [5:4]
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [23:6] $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [3:0] } = { 4'0111 $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [4] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [5:4] $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [4] $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [5] 2'00 $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [4] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [4] $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [5] $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [5:4] 4'1111 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][2]$824:
+      Old ports: A=24'010110101000001001111001, B=24'011010100110110110011000, Y=$memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798
+      New ports: A=2'01, B=2'10, Y={ $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [7] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [23:8] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [6:1] } = { 2'01 $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [7] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [0] 4'1010 $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [0] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [7] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [7] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [7] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [7] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [0] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [7] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [0] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [0] 4'1100 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][1]$821:
+      Old ports: A=24'001100001111101111000101, B=24'010001110001110011101100, Y=$memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796
+      New ports: A=2'01, B=2'10, Y={ $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [23:4] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [2:1] } = { 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [0] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [0] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [0] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [0] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [0] 2'11 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [0] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [0] 2'11 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [3] 3'010 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][0]$818:
+      Old ports: A=24'000000000000000000000000, B=24'000110001111100010111000, Y=$memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795
+      New ports: A=1'0, B=1'1, Y=$memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3]
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [23:4] $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [2:0] } = { 3'000 $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] 3'000 $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] 3'000 $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] 3'000 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][4][15]$863:
+      Old ports: A=24'110011110000010000111011, B=24'111001110000011101001000, Y=$memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817
+      New ports: A=2'01, B=2'10, Y={ $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [6] $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [23:7] $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [5:1] } = { 2'11 $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [6] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [0] 9'111000001 $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [6] $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [6] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [0] $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [0] 2'10 $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [0] }
+  Optimizing cells in module \top.
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][3][7]$815:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816, B=$memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817, Y=$memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793
+      New ports: A={ $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [4] $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [0] $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [4] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [0] 2'00 $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [4] 2'01 $memory\sinegen.LUT.mem$rdmux[0][3][7]$a$816 [0] }, B={ 2'01 $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [6] $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [6] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [6] $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [0] $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [0] 2'10 $memory\sinegen.LUT.mem$rdmux[0][3][7]$b$817 [0] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [15] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [10:2] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [23:16] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [14:11] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [1] } = { 1'1 $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [3] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [8] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [15] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [4] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [10] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [3] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [10] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [2] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [2] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [7] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [7] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [0] }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][3][6]$812:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813, B=$memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814, Y=$memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792
+      New ports: A={ $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0] $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0] 2'00 $memory\sinegen.LUT.mem$rdmux[0][3][6]$a$813 [0] }, B={ 3'101 $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [3] $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [0] $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [3] $memory\sinegen.LUT.mem$rdmux[0][3][6]$b$814 [0] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [12] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [7:3] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [23:13] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [11:8] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [2:1] } = { 3'100 $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [3] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [4:3] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [7:6] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [6] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [7] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [0] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [4] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [0] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [6] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [7] 2'00 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][3][5]$809:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810, B=$memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811, Y=$memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790
+      New ports: A={ 3'101 $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [3] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [3] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [3] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] $memory\sinegen.LUT.mem$rdmux[0][3][5]$a$810 [0] }, B={ 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [5:4] $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [4] $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [5:4] $memory\sinegen.LUT.mem$rdmux[0][3][5]$b$811 [5:4] 3'001 }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [18:16] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [11] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [7:3] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [1:0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [23:19] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [15:12] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [10:8] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [2] } = { 2'10 $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [1] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [3] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [4] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [6] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [7] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [0] 1'1 $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [0] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [6] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [7] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [1] }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][3][4]$806:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807, B=$memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808, Y=$memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789
+      New ports: A={ $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][4]$a$807 [3] 2'00 }, B={ 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [2] 2'01 $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [0] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [2] $memory\sinegen.LUT.mem$rdmux[0][3][4]$b$808 [0] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [23] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [8] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [6] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [4:2] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [22:9] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [7] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [5] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [1] } = { $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [3] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [8] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [2] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [4:3] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [3] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [3:2] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [2] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [2] 2'00 $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [3] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [8] 1'0 $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [0] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [0] }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][3][3]$803:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804, B=$memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805, Y=$memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787
+      New ports: A={ 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [0] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [2] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [2] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [0] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [2] $memory\sinegen.LUT.mem$rdmux[0][3][3]$a$804 [0] }, B={ 4'0110 $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [0] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [0] $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [3] $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [3] $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [0] $memory\sinegen.LUT.mem$rdmux[0][3][3]$b$805 [0] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [17] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [15] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [13] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [10] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [8:6] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [4:2] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [23:18] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [16] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [14] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [12:11] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [9] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [5] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [1] } = { 1'0 $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [17] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [8] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [15] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [4] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [10] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [10] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [13] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [7] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [7] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [0] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [3] 1'0 }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][3][2]$800:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801, B=$memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802, Y=$memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786
+      New ports: A={ $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [5] $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [5] $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [5] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][2]$a$801 [5] 2'11 }, B={ 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [4] 2'10 $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [0] $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [4] $memory\sinegen.LUT.mem$rdmux[0][3][2]$b$802 [0] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [12] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [10] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [7:4] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [23:13] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [11] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [9:8] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [3:1] } = { 3'011 $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [0] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [4] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [0] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [7:6] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [6] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [7] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [10] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [4] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [6] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [7] 1'1 $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [0] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [0] }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][3][1]$797:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798, B=$memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799, Y=$memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784
+      New ports: A={ $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [7] 2'10 $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [7] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [7] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [7] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [0] $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [0] 2'10 $memory\sinegen.LUT.mem$rdmux[0][3][1]$a$798 [0] }, B={ 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [5:4] $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [4] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [5:4] $memory\sinegen.LUT.mem$rdmux[0][3][1]$b$799 [5:4] 2'11 }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [21] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [17:16] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [11:10] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [7:4] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [1:0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [23:22] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [20:18] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [15:12] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [9:8] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [3:2] } = { 2'01 $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [0] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [4] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [1] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [6] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [7] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [10] 1'0 $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [6] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [7] 1'1 $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [1] }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][3][0]$794:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795, B=$memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796, Y=$memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783
+      New ports: A={ $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] $memory\sinegen.LUT.mem$rdmux[0][3][0]$a$795 [3] 2'00 }, B={ $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [0] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [3] 2'10 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [3] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [0] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [13] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [10] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [7] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [4:2] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [23:14] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [12:11] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [9:8] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [6:5] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [1] } = { 1'0 $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [10] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [0] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [13] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [4] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [10] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [10] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [10] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [13] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [13] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [7] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [7] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [0] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [0] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [2] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [3] 1'0 }
+  Optimizing cells in module \top.
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][2][3]$791:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792, B=$memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793, Y=$memory\sinegen.LUT.mem$rdmux[0][1][1]$b$781
+      New ports: A={ 2'00 $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [3] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [3] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [7:6] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [6] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [7] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [0] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [12] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [4] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [0] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [6] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [7] $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [7:3] 2'00 $memory\sinegen.LUT.mem$rdmux[0][2][3]$a$792 [0] }, B={ $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [3] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [8] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [15] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [10] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [3] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [10] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [15] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [2] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [2] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [7] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [7] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [10:2] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [0] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [0] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][1][1]$b$781 [22:20] $memory\sinegen.LUT.mem$rdmux[0][1][1]$b$781 [18:0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][1][1]$b$781 [23] $memory\sinegen.LUT.mem$rdmux[0][1][1]$b$781 [19] } = { 1'1 $memory\sinegen.LUT.mem$rdmux[0][1][1]$b$781 [4] }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][2][2]$788:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789, B=$memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790, Y=$memory\sinegen.LUT.mem$rdmux[0][1][1]$a$780
+      New ports: A={ $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [23] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [3] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [8] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [2] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [3] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [3] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [3:2] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [2] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [2] 2'00 $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [3] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [8] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [8] 1'0 $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [6] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [0] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [4:2] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [0] $memory\sinegen.LUT.mem$rdmux[0][2][2]$a$789 [0] }, B={ 2'10 $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [1] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [3] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [18:16] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [6] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [7] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [0] 1'1 $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [11] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [0] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [6] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [7] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [7:3] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [1] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [1:0] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][1][1]$a$780 [23:20] $memory\sinegen.LUT.mem$rdmux[0][1][1]$a$780 [18:0] }
+      New connections: $memory\sinegen.LUT.mem$rdmux[0][1][1]$a$780 [19] = $memory\sinegen.LUT.mem$rdmux[0][1][1]$a$780 [4]
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][2][1]$785:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786, B=$memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787, Y=$memory\sinegen.LUT.mem$rdmux[0][1][0]$b$778
+      New ports: A={ 2'11 $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [0] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [0] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [7:6] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [6] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [7] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [10] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [12] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [4] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [10] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [6] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [7] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [7:4] 1'1 $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [0] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [0] $memory\sinegen.LUT.mem$rdmux[0][2][1]$a$786 [0] }, B={ $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [17] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [8] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [15] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [10] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [17] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [10] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [15] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [13] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [13] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [7] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [7] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [10] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [0] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [8:6] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [3] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [4:2] 1'0 $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [0] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][1][0]$b$778 [22:20] $memory\sinegen.LUT.mem$rdmux[0][1][0]$b$778 [18:0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][1][0]$b$778 [23] $memory\sinegen.LUT.mem$rdmux[0][1][0]$b$778 [19] } = { 1'0 $memory\sinegen.LUT.mem$rdmux[0][1][0]$b$778 [4] }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][2][0]$782:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783, B=$memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784, Y=$memory\sinegen.LUT.mem$rdmux[0][1][0]$a$777
+      New ports: A={ $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [10] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [0] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [13] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [10] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [10] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [10] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [13] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [13] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [13] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [7] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [7] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [10] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [0] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [0] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [7] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [2] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [3] $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [4:2] 1'0 $memory\sinegen.LUT.mem$rdmux[0][2][0]$a$783 [0] }, B={ 1'1 $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [21] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [0] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [1] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [17:16] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [6] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [7] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [10] 1'0 $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [11:10] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [6] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [7] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [7:4] 1'1 $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [1] $memory\sinegen.LUT.mem$rdmux[0][2][0]$b$784 [1:0] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][1][0]$a$777 [22:20] $memory\sinegen.LUT.mem$rdmux[0][1][0]$a$777 [18:0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][1][0]$a$777 [23] $memory\sinegen.LUT.mem$rdmux[0][1][0]$a$777 [19] } = { 1'0 $memory\sinegen.LUT.mem$rdmux[0][1][0]$a$777 [4] }
+  Optimizing cells in module \top.
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][1][1]$779:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][1][1]$a$780, B=$memory\sinegen.LUT.mem$rdmux[0][1][1]$b$781, Y=$memory\sinegen.LUT.mem$rdmux[0][0][0]$b$775
+      New ports: A={ $memory\sinegen.LUT.mem$rdmux[0][1][1]$a$780 [23:20] $memory\sinegen.LUT.mem$rdmux[0][1][1]$a$780 [18:0] }, B={ 1'1 $memory\sinegen.LUT.mem$rdmux[0][1][1]$b$781 [22:20] $memory\sinegen.LUT.mem$rdmux[0][1][1]$b$781 [18:0] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][0][0]$b$775 [23:20] $memory\sinegen.LUT.mem$rdmux[0][0][0]$b$775 [18:0] }
+      New connections: $memory\sinegen.LUT.mem$rdmux[0][0][0]$b$775 [19] = $memory\sinegen.LUT.mem$rdmux[0][0][0]$b$775 [4]
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][1][0]$776:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][1][0]$a$777, B=$memory\sinegen.LUT.mem$rdmux[0][1][0]$b$778, Y=$memory\sinegen.LUT.mem$rdmux[0][0][0]$a$774
+      New ports: A={ $memory\sinegen.LUT.mem$rdmux[0][1][0]$a$777 [22:20] $memory\sinegen.LUT.mem$rdmux[0][1][0]$a$777 [18:0] }, B={ $memory\sinegen.LUT.mem$rdmux[0][1][0]$b$778 [22:20] $memory\sinegen.LUT.mem$rdmux[0][1][0]$b$778 [18:0] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][0][0]$a$774 [22:20] $memory\sinegen.LUT.mem$rdmux[0][0][0]$a$774 [18:0] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][0][0]$a$774 [23] $memory\sinegen.LUT.mem$rdmux[0][0][0]$a$774 [19] } = { 1'0 $memory\sinegen.LUT.mem$rdmux[0][0][0]$a$774 [4] }
+  Optimizing cells in module \top.
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][0][0]$773:
+      Old ports: A=$memory\sinegen.LUT.mem$rdmux[0][0][0]$a$774, B=$memory\sinegen.LUT.mem$rdmux[0][0][0]$b$775, Y=$\sinegen.LUT.mem$rdreg[0]$d
+      New ports: A={ 1'0 $memory\sinegen.LUT.mem$rdmux[0][0][0]$a$774 [22:20] $memory\sinegen.LUT.mem$rdmux[0][0][0]$a$774 [18:0] }, B={ $memory\sinegen.LUT.mem$rdmux[0][0][0]$b$775 [23:20] $memory\sinegen.LUT.mem$rdmux[0][0][0]$b$775 [18:0] }, Y={ $\sinegen.LUT.mem$rdreg[0]$d [23:20] $\sinegen.LUT.mem$rdreg[0]$d [18:0] }
+      New connections: $\sinegen.LUT.mem$rdreg[0]$d [19] = $\sinegen.LUT.mem$rdreg[0]$d [4]
+  Optimizing cells in module \top.
+Performed a total of 31 changes.
+
+7.30.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~36 debug messages>
+Removed a total of 12 cells.
+
+7.30.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $auto$ff.cc:266:slice$684 ($dffe) from module top (D = \i2s2_inst.tx_data_l [0], Q = \i2s2_inst.tx_data_l_shift [0], rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$669 ($dffe) from module top (D = \sinegen.phase_l [26:0], Q = \sinegen.phase_l [26:0]).
+Handling D = Q on $auto$ff.cc:266:slice$868 ($dffe) from module top (removing D path).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$692 ($sdffce) from module top.
+
+7.30.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 2 unused cells and 46 unused wires.
+<suppressed ~3 debug messages>
+
+7.30.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][3][3]$803:
+      Old ports: A={ 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] }, B={ 4'0110 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [22] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [20] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [14] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [18] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [21] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [12] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [6] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [19] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [5] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [2] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [9] }
+      New ports: A={ 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] }, B={ 4'0110 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [22] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [20] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [14] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [18] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [21] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [12] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [6] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [19] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [5] $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [2] }
+      New connections: $memory\sinegen.LUT.mem$rdmux[0][2][1]$b$787 [9] = $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21]
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][3][5]$809:
+      Old ports: A={ 3'101 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] }, B={ 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] 3'001 }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [18:16] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [11] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [14] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [15] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [5] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [19] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [20] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [21] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [13] }
+      New ports: A={ 3'101 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] }, B={ 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] 3'001 }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [18:16] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [14] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [15] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [19] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [20] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [21] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [13] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [11] $memory\sinegen.LUT.mem$rdmux[0][2][2]$b$790 [5] } = { $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] }
+    Consolidated identical input bits for $mux cell $memory\sinegen.LUT.mem$rdmux[0][3][7]$815:
+      Old ports: A={ $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] 2'00 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] 2'01 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] }, B={ 2'01 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] 2'10 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [20] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [18] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [9] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [21] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [12] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [6:5] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [19] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [22] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [14] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [1] }
+      New ports: A={ $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] 1'1 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] 2'00 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] 2'01 }, B={ 2'01 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22] 1'0 $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21] $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [21] 2'10 }, Y={ $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [20] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [18] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [21] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [12] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [6:5] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [19] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [22] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [14] }
+      New connections: { $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [9] $memory\sinegen.LUT.mem$rdmux[0][2][3]$b$793 [1] } = $memory\sinegen.LUT.mem$rdmux[0][3][0]$b$796 [22:21]
+  Optimizing cells in module \top.
+Performed a total of 3 changes.
+
+7.30.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.13. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$874 ($sdffce) from module top.
+
+7.30.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+7.30.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.20. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$875 ($sdffce) from module top.
+
+7.30.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.27. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$876 ($sdffce) from module top.
+
+7.30.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.30. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.31. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.32. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.33. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.34. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$877 ($sdffce) from module top.
+
+7.30.35. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.37. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.38. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.39. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.40. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.41. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$878 ($sdffce) from module top.
+
+7.30.42. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.43. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.44. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.45. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.46. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.47. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.48. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$879 ($sdffce) from module top.
+
+7.30.49. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.50. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.51. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.52. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.53. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.54. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.55. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$880 ($sdffce) from module top.
+
+7.30.56. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.57. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.58. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.59. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.60. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.61. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.62. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$881 ($sdffce) from module top.
+
+7.30.63. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.64. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.65. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.66. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.67. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.68. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.69. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$882 ($sdffce) from module top.
+
+7.30.70. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.71. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.72. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.73. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.74. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.75. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.76. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$883 ($sdffce) from module top.
+
+7.30.77. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.78. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.79. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.80. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.81. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.82. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.83. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$884 ($sdffce) from module top.
+
+7.30.84. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.85. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.86. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.87. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.88. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.89. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.90. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$885 ($sdffce) from module top.
+
+7.30.91. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.92. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.93. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.94. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.95. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.96. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.97. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$886 ($sdffce) from module top.
+
+7.30.98. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.99. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.100. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.101. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.102. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.103. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.104. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$887 ($sdffce) from module top.
+
+7.30.105. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.106. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.107. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.108. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.109. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.110. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.111. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$888 ($sdffce) from module top.
+
+7.30.112. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.113. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.114. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.115. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.116. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.117. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.118. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$889 ($sdffce) from module top.
+
+7.30.119. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.120. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.121. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.122. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.123. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.124. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.125. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$890 ($sdffce) from module top.
+
+7.30.126. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.127. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.128. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.129. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.130. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.131. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.132. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$891 ($sdffce) from module top.
+
+7.30.133. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.134. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.135. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.136. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.137. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.138. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.139. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$892 ($sdffce) from module top.
+
+7.30.140. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.141. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.142. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.143. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.144. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.145. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.146. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$893 ($sdffce) from module top.
+
+7.30.147. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.148. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.149. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.150. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.151. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.152. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.153. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$894 ($sdffce) from module top.
+
+7.30.154. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.155. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.156. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.157. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.158. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.159. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.160. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$895 ($sdffce) from module top.
+
+7.30.161. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.162. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.163. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.164. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.165. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.166. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.167. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$896 ($sdffce) from module top.
+
+7.30.168. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 2 unused cells and 2 unused wires.
+<suppressed ~3 debug messages>
+
+7.30.169. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.170. Rerunning OPT passes. (Maybe there is more to do..)
+
+7.30.171. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+7.30.172. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+7.30.173. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.30.174. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.30.175. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.30.176. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.30.177. Finished OPT passes. (There is nothing left to do.)
+
+7.31. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+7.32. Executing TECHMAP pass (map to technology primitives).
+
+7.32.1. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/techmap.v
+Parsing Verilog input from `/opt/oss-cad-suite/lib/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+7.32.2. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/opt/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+7.32.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $sdffce.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$6b90a16b6f3b57b9c9d958838204f952a01dc262\_80_ice40_alu for cells of type $alu.
+Using template $paramod$53700bbee849b2010ad0b60a61ccd204a10e24ca\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$b18e16801adf491a64caa0542270798e5d4ac6b6\_80_ice40_alu for cells of type $alu.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $xor.
+No more expansions possible.
+<suppressed ~226 debug messages>
+
+7.33. Executing OPT pass (performing simple optimizations).
+
+7.33.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~113 debug messages>
+
+7.33.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~285 debug messages>
+Removed a total of 95 cells.
+
+7.33.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.33.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 7 unused cells and 100 unused wires.
+<suppressed ~8 debug messages>
+
+7.33.5. Finished fast OPT passes.
+
+7.34. Executing ICE40_OPT pass (performing simple optimizations).
+
+7.34.1. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$696.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$696.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$709.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$696.BB [1]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$720.slice[0].carry: CO=\i2s2_inst.count [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$723.slice[0].carry: CO=\sinegen.phase_l [27]
+
+7.34.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~5 debug messages>
+
+7.34.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.34.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.34.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 2 unused cells and 1 unused wires.
+<suppressed ~3 debug messages>
+
+7.34.6. Rerunning OPT passes. (Removed registers in this run.)
+
+7.34.7. Running ICE40 specific optimizations.
+
+7.34.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.34.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.34.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.34.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.34.12. Finished OPT passes. (There is nothing left to do.)
+
+7.35. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+7.36. Executing TECHMAP pass (map to technology primitives).
+
+7.36.1. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/opt/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+7.36.2. Continuing TECHMAP pass.
+Using template \$_DFF_P_ for cells of type $_DFF_P_.
+Using template \$_DFFE_PP_ for cells of type $_DFFE_PP_.
+Using template \$_SDFFCE_PP0P_ for cells of type $_SDFFCE_PP0P_.
+No more expansions possible.
+<suppressed ~92 debug messages>
+
+7.37. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.38. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping top.$auto$alumacc.cc:485:replace_alu$720.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$723.slice[0].carry ($lut).
+
+7.39. Executing ICE40_OPT pass (performing simple optimizations).
+
+7.39.1. Running ICE40 specific optimizations.
+
+7.39.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~43 debug messages>
+
+7.39.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~69 debug messages>
+Removed a total of 23 cells.
+
+7.39.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.39.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 388 unused wires.
+<suppressed ~1 debug messages>
+
+7.39.6. Rerunning OPT passes. (Removed registers in this run.)
+
+7.39.7. Running ICE40 specific optimizations.
+
+7.39.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+7.39.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+7.39.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.39.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+7.39.12. Finished OPT passes. (There is nothing left to do.)
+
+7.40. Executing TECHMAP pass (map to technology primitives).
+
+7.40.1. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/opt/oss-cad-suite/lib/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+7.40.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+7.41. Executing ABC pass (technology mapping using ABC).
+
+7.41.1. Extracting gate netlist of module `\top' to `<abc-temp-dir>/input.blif'..
+Extracted 234 gates and 303 wires to a netlist network with 67 inputs and 62 outputs.
+
+7.41.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + dress <abc-temp-dir>/input.blif 
+ABC: Total number of equiv classes                =      87.
+ABC: Participating nodes from both networks       =     180.
+ABC: Participating nodes from the first network   =      87. (  87.00 % of nodes)
+ABC: Participating nodes from the second network  =      93. (  93.00 % of nodes)
+ABC: Node pairs (any polarity)                    =      87. (  87.00 % of names can be moved)
+ABC: Node pairs (same polarity)                   =      71. (  71.00 % of names can be moved)
+ABC: Total runtime =     0.02 sec
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+7.41.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:       99
+ABC RESULTS:        internal signals:      174
+ABC RESULTS:           input signals:       67
+ABC RESULTS:          output signals:       62
+Removing temp directory.
+
+7.42. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+7.43. Executing TECHMAP pass (map to technology primitives).
+
+7.43.1. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/opt/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+7.43.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~22 debug messages>
+Removed 9 unused cells and 160 unused wires.
+
+7.44. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:      111
+  1-LUT                9
+  2-LUT                6
+  3-LUT               58
+  4-LUT               38
+  with \SB_CARRY    (#0)   10
+  with \SB_CARRY    (#1)   10
+
+Eliminating LUTs.
+Number of LUTs:      111
+  1-LUT                9
+  2-LUT                6
+  3-LUT               58
+  4-LUT               38
+  with \SB_CARRY    (#0)   10
+  with \SB_CARRY    (#1)   10
+
+Combining LUTs.
+Number of LUTs:      111
+  1-LUT                9
+  2-LUT                6
+  3-LUT               58
+  4-LUT               38
+  with \SB_CARRY    (#0)   10
+  with \SB_CARRY    (#1)   10
+
+Eliminated 0 LUTs.
+Combined 0 LUTs.
+<suppressed ~408 debug messages>
+
+7.45. Executing TECHMAP pass (map to technology primitives).
+
+7.45.1. Executing Verilog-2005 frontend: /opt/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+7.45.2. Continuing TECHMAP pass.
+Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod$4789582d00084c3344b7a6dacf516efd46244876\$lut for cells of type $lut.
+Using template $paramod$a63d84c9dd26caf4e75c7cc2f6f70f64a5b14aa1\$lut for cells of type $lut.
+Using template $paramod$36994c96b66e9c4b03f88a6b64102f471c2e279f\$lut for cells of type $lut.
+Using template $paramod$6cfa73117205c5791414f004da738e52b07bd7e0\$lut for cells of type $lut.
+Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
+Using template $paramod$96a3fe6598593729f244fa011a332401bbcb48fb\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10011110 for cells of type $lut.
+Using template $paramod$3204210736873ef5d53b95f3dbe4714b354f9351\$lut for cells of type $lut.
+Using template $paramod$43562b142d4fb20afd1f479b178fa3176819b4d4\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001010 for cells of type $lut.
+Using template $paramod$bde533d791182095d89852f3913c1f29630f4e5c\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00011100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod$ffd2378ab8e7352643c4c93416eedca645db528c\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod$f771071c005c3141a0eb72b7ad2f555335227972\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod$bb462280180121beca6da059b15a9d0592f5942e\$lut for cells of type $lut.
+Using template $paramod$a55f1cd7dd899e453fe61d7ec95053334d858d41\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod$d72e553c3f915a77dd87caddf489da84922aac17\$lut for cells of type $lut.
+Using template $paramod$e86317a9023eff51a4e4c6c0e944145b111aea45\$lut for cells of type $lut.
+Using template $paramod$663e24ace91f63d64053bdb36ffe728dafd393fd\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010100 for cells of type $lut.
+Using template $paramod$7d9de87d40343687bef1a73558f6f2ca64a9a26c\$lut for cells of type $lut.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
+Using template $paramod$d4fae2c0d9ad2966369cd4e39b81c71bcd1327c9\$lut for cells of type $lut.
+Using template $paramod$bb4fff1cc3b827238aa40993cafede1c5beecbe3\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01100000 for cells of type $lut.
+Using template $paramod$5e10e6a328d7446862668936c2205352dd948176\$lut for cells of type $lut.
+Using template $paramod$38a207c707820f72f67386d2619ee46ee88964f9\$lut for cells of type $lut.
+Using template $paramod$dcbc3898d47e3be92d713cff35bf3513123f76ff\$lut for cells of type $lut.
+Using template $paramod$d7644e147b6dd78ac7a36e2a9e5da3116869c293\$lut for cells of type $lut.
+Using template $paramod$2c453efb8a0f50ad065a2e6a5743ed93f2c8d1e9\$lut for cells of type $lut.
+Using template $paramod$e0c48eb8c215cf4f425dbafcf2f2ea258489a947\$lut for cells of type $lut.
+Using template $paramod$e9c77024ca501b890c641f9c0b10e27242db8730\$lut for cells of type $lut.
+Using template $paramod$2abf8d01db8bb150a3e54e08a2a6aa9bd6f13826\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11000010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00101100 for cells of type $lut.
+Using template $paramod$a6d93e238c4eebd6cfde5b3e37ab8d384eafb8e0\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11000101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010110 for cells of type $lut.
+Using template $paramod$361ce7596a4017543941eab0bc3aa71a18d8c0a1\$lut for cells of type $lut.
+Using template $paramod$cbe098f62571879b866fe8f9c28ab764bb5e04ea\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001011 for cells of type $lut.
+Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
+Using template $paramod$0f52647588235a7349ddd3f3432c9ac1e33ad9e1\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11000001 for cells of type $lut.
+Using template $paramod$b783f2a3e13023c7c3b4fa5eadc899d09c899cb3\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001011 for cells of type $lut.
+No more expansions possible.
+<suppressed ~868 debug messages>
+Removed 0 unused cells and 234 unused wires.
+
+7.46. Executing AUTONAME pass.
+Renamed 1336 objects in module top (19 iterations).
+<suppressed ~264 debug messages>
+
+7.47. Executing HIERARCHY pass (managing design hierarchy).
+
+7.47.1. Analyzing design hierarchy..
+Top module:  \top
+
+7.47.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+7.48. Printing statistics.
+
+=== top ===
+
+   Number of wires:                140
+   Number of wire bits:            621
+   Number of public wires:         140
+   Number of public wire bits:     621
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                199
+     SB_CARRY                       17
+     SB_DFF                         17
+     SB_DFFE                        28
+     SB_DFFESR                      25
+     SB_LUT4                       111
+     SB_PLL40_PAD                    1
+
+7.49. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+7.50. Executing JSON backend.
+
+Warnings: 7 unique messages, 7 total
+End of script. Logfile hash: 44fbed6423, CPU: user 0.44s system 0.28s, MEM: 26.21 MB peak
+Yosys 0.25+1 (git sha1 d3216593d, clang 10.0.0-4ubuntu1 -fPIC -Os)
+Time spent: 34% 23x read_verilog (0 sec), 19% 1x abc (0 sec), ...

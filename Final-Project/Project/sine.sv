@@ -18,11 +18,17 @@ output [23:0]sine_o
      logic [31:0] frequency_step;
      logic [23:0] sine_val;
      logic valid_o_l;
+     //logic [23:0] sine_o_l;
      
      assign frequency_step = 32'h8000000;
      
-     always @(posedge sample_clk) begin
-         phase_l <= phase_l + frequency_step;
+     always @(posedge clk_i) begin
+         if(ready_i & valid_o) begin // Producer Yumi-Valid Handshake
+           valid_o_l <= 1'b0;
+           phase_l <= phase_l + frequency_step;
+         end else begin
+           valid_o_l <= 1'b1;
+         end
      end
      
      

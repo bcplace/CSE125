@@ -103,11 +103,11 @@ VL_ATTR_COLD void Vtestbench___024root___stl_sequent__TOP__0(Vtestbench___024roo
     vlSelf->testbench__DOT__rg__DOT__phase_lo_r = vlSelf->testbench__DOT__rg__DOT__ctr_lo_r;
     vlSelf->testbench__DOT__rg__DOT__phase_hi_r = (0xaU 
                                                    == (IData)(vlSelf->testbench__DOT__rg__DOT__ctr_hi_r));
-    vlSelf->testbench__DOT__dut__DOT__tx_lr_clk_o = 
-        (1U & ((IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count) 
-               >> 8U));
     vlSelf->testbench__DOT__reset_i = ((IData)(vlSelf->testbench__DOT__rg__DOT__ctr_lo_r) 
                                        ^ (0xaU == (IData)(vlSelf->testbench__DOT__rg__DOT__ctr_hi_r)));
+    vlSelf->testbench__DOT__dut__DOT__axis_tx_data 
+        = vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__mem
+        [vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__read_addr_l];
     vlSelf->testbench__DOT__dut__DOT__tx_data_o = (
                                                    ((0x18U 
                                                      >= 
@@ -165,10 +165,7 @@ VL_ATTR_COLD void Vtestbench___024root___dump_triggers__act(Vtestbench___024root
         VL_DBG_MSGF("         'act' region trigger index 3 is active: @(posedge testbench.dut.clk_o)\n");
     }
     if (vlSelf->__VactTriggered.at(4U)) {
-        VL_DBG_MSGF("         'act' region trigger index 4 is active: @(posedge testbench.dut.tx_lr_clk_o)\n");
-    }
-    if (vlSelf->__VactTriggered.at(5U)) {
-        VL_DBG_MSGF("         'act' region trigger index 5 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+        VL_DBG_MSGF("         'act' region trigger index 4 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
     }
 }
 #endif  // VL_DEBUG
@@ -195,10 +192,7 @@ VL_ATTR_COLD void Vtestbench___024root___dump_triggers__nba(Vtestbench___024root
         VL_DBG_MSGF("         'nba' region trigger index 3 is active: @(posedge testbench.dut.clk_o)\n");
     }
     if (vlSelf->__VnbaTriggered.at(4U)) {
-        VL_DBG_MSGF("         'nba' region trigger index 4 is active: @(posedge testbench.dut.tx_lr_clk_o)\n");
-    }
-    if (vlSelf->__VnbaTriggered.at(5U)) {
-        VL_DBG_MSGF("         'nba' region trigger index 5 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+        VL_DBG_MSGF("         'nba' region trigger index 4 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
     }
 }
 #endif  // VL_DEBUG
@@ -215,10 +209,10 @@ VL_ATTR_COLD void Vtestbench___024root___ctor_var_reset(Vtestbench___024root* vl
     vlSelf->testbench__DOT__rg__DOT__phase_lo_r = 0;
     vlSelf->testbench__DOT__rg__DOT__phase_hi_r = 0;
     vlSelf->testbench__DOT__dut__DOT__button_async_unsafe_i = VL_RAND_RESET_I(3);
-    vlSelf->testbench__DOT__dut__DOT__tx_lr_clk_o = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__tx_data_o = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__rx_data_i = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__led_o = VL_RAND_RESET_I(5);
+    vlSelf->testbench__DOT__dut__DOT__axis_tx_data = VL_RAND_RESET_I(24);
     vlSelf->testbench__DOT__dut__DOT__axis_tx_ready = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__axis_rx_valid = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__axis_rx_ready = VL_RAND_RESET_I(1);
@@ -242,11 +236,9 @@ VL_ATTR_COLD void Vtestbench___024root___ctor_var_reset(Vtestbench___024root* vl
         vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__mem[__Vi0] = VL_RAND_RESET_I(24);
     }
     vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__read_addr_l = VL_RAND_RESET_I(5);
-    vlSelf->__Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l = VL_RAND_RESET_I(32);
     vlSelf->__Vtrigrprev__TOP__testbench__DOT__clk_i = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigrprev__TOP__testbench__DOT__reset_i = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigrprev__TOP__testbench__DOT__dut__DOT__clk_o = VL_RAND_RESET_I(1);
-    vlSelf->__Vtrigrprev__TOP__testbench__DOT__dut__DOT__tx_lr_clk_o = VL_RAND_RESET_I(1);
     for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = 0;
     }

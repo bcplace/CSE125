@@ -28,6 +28,10 @@ module top
   ,output rx_data_clk_o
   // Input data
   ,input  rx_data_i
+  
+  ,output ready_o
+  
+  ,output valid_o
 
   ,output [5:1] led_o);
 
@@ -73,7 +77,7 @@ module top
    logic axis_clk;
 
   // This is a PLL! You'll learn about these later...
- /* SB_PLL40_PAD 
+  SB_PLL40_PAD 
     #(.FEEDBACK_PATH("SIMPLE")
      ,.PLLOUT_SELECT("GENCLK")
      ,.DIVR(4'b0000)
@@ -86,11 +90,11 @@ module top
      ,.PLLOUTCORE(clk_o)
      ,.RESETB(1'b1)
      ,.BYPASS(1'b0)
-     );*/
-     nonsynth_clock_gen
+     );
+     /*nonsynth_clock_gen
      #(.cycle_time_p(44))
    cg
-     (.clk_o(clk_o));
+     (.clk_o(clk_o));*/
   /* verilator lint_off WIDTH */
    assign axis_clk = clk_o;
    axis_i2s2 
@@ -128,6 +132,11 @@ module top
      .ready_i(axis_tx_ready),
      .valid_o(axis_tx_valid),
      .sine_o(axis_tx_data));
+     
+    
+     
+     assign ready_o = axis_tx_ready;
+     assign valid_o = axis_tx_valid;
      assign axis_tx_last = 1'b0;
              
 

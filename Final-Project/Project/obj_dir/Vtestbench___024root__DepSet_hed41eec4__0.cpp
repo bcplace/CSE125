@@ -27,8 +27,6 @@ void Vtestbench___024root___eval_initial(Vtestbench___024root* vlSelf) {
         = vlSelf->testbench__DOT__reset_i;
     vlSelf->__Vtrigrprev__TOP__testbench__DOT__dut__DOT__clk_o 
         = vlSelf->testbench__DOT__dut__DOT__clk_o;
-    vlSelf->__Vtrigrprev__TOP__testbench__DOT__dut__DOT__tx_lr_clk_o 
-        = vlSelf->testbench__DOT__dut__DOT__tx_lr_clk_o;
 }
 
 VL_INLINE_OPT VlCoroutine Vtestbench___024root___eval_initial__TOP__1(Vtestbench___024root* vlSelf) {
@@ -86,20 +84,11 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__2(Vtestbench___024ro
     if (false && vlSelf) {}  // Prevent unused
     Vtestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtestbench___024root___nba_sequent__TOP__2\n"); );
-    // Body
-    vlSelf->__Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l 
-        = vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l;
-    vlSelf->__Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l 
-        = ((IData)(0x8000000U) + vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l);
-}
-
-VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024root* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtestbench___024root___nba_sequent__TOP__3\n"); );
     // Init
     SData/*8:0*/ __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__count;
     __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__count = 0;
+    CData/*0:0*/ __Vdly__testbench__DOT__dut__DOT__axis_tx_ready;
+    __Vdly__testbench__DOT__dut__DOT__axis_tx_ready = 0;
     IData/*23:0*/ __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l_shift;
     __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l_shift = 0;
     IData/*23:0*/ __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_r_shift;
@@ -114,7 +103,11 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024ro
     __Vdly__testbench__DOT__dut__DOT__axis_rx_valid = 0;
     CData/*0:0*/ __Vdly__testbench__DOT__dut__DOT__axis_rx_last;
     __Vdly__testbench__DOT__dut__DOT__axis_rx_last = 0;
+    IData/*31:0*/ __Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l;
+    __Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l = 0;
     // Body
+    __Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l 
+        = vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l;
     __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__din_sync_shift 
         = vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__din_sync_shift;
     __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__count 
@@ -123,14 +116,32 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024ro
         = vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_l_shift;
     __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_r_shift 
         = vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_r_shift;
-    __Vdly__testbench__DOT__dut__DOT__axis_rx_last 
-        = vlSelf->testbench__DOT__dut__DOT__axis_rx_last;
-    __Vdly__testbench__DOT__dut__DOT__axis_rx_valid 
-        = vlSelf->testbench__DOT__dut__DOT__axis_rx_valid;
-    __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_r_shift 
-        = vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_r_shift;
-    __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l_shift 
-        = vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l_shift;
+    if (vlSelf->testbench__DOT__dut__DOT__axis_tx_ready) {
+        __Vdly__testbench__DOT__dut__DOT__axis_tx_ready = 1U;
+        __Vdly__testbench__DOT__dut__DOT__axis_rx_last 
+            = vlSelf->testbench__DOT__dut__DOT__axis_rx_last;
+        __Vdly__testbench__DOT__dut__DOT__axis_rx_valid 
+            = vlSelf->testbench__DOT__dut__DOT__axis_rx_valid;
+        __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_r_shift 
+            = vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_r_shift;
+        __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l_shift 
+            = vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l_shift;
+        vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__valid_o_l = 1U;
+        vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__valid_o_l = 0U;
+    } else {
+        __Vdly__testbench__DOT__dut__DOT__axis_tx_ready = 0U;
+        __Vdly__testbench__DOT__dut__DOT__axis_rx_last 
+            = vlSelf->testbench__DOT__dut__DOT__axis_rx_last;
+        __Vdly__testbench__DOT__dut__DOT__axis_rx_valid 
+            = vlSelf->testbench__DOT__dut__DOT__axis_rx_valid;
+        __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_r_shift 
+            = vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_r_shift;
+        __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l_shift 
+            = vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l_shift;
+        vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__valid_o_l = 1U;
+    }
+    __Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l 
+        = ((IData)(0x8000000U) + vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l);
     __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__din_sync_shift 
         = ((6U & ((IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__din_sync_shift) 
                   << 1U)) | (IData)(vlSelf->testbench__DOT__dut__DOT__rx_data_i));
@@ -142,13 +153,14 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024ro
                                              (0x1fU 
                                               & ((IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count) 
                                                  >> 3U))))) {
-        if ((1U & (~ (IData)(vlSelf->testbench__DOT__dut__DOT__tx_lr_clk_o)))) {
+        if ((1U & (~ ((IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count) 
+                      >> 8U)))) {
             __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_l_shift 
                 = ((0xfffffeU & (vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_l_shift 
                                  << 1U)) | (1U & ((IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__din_sync_shift) 
                                                   >> 2U)));
         }
-        if (vlSelf->testbench__DOT__dut__DOT__tx_lr_clk_o) {
+        if ((0x100U & (IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count))) {
             __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_r_shift 
                 = ((0xfffffeU & (vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_r_shift 
                                  << 1U)) | (1U & ((IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__din_sync_shift) 
@@ -180,14 +192,24 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024ro
         }
     }
     if (vlSelf->testbench__DOT__dut__DOT__sync_b__DOT__q_r) {
+        __Vdly__testbench__DOT__dut__DOT__axis_tx_ready = 0U;
         __Vdly__testbench__DOT__dut__DOT__axis_rx_last = 0U;
         __Vdly__testbench__DOT__dut__DOT__axis_rx_valid = 0U;
         vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_r = 0U;
         vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_l = 0U;
         vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_r = 0U;
         vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l = 0U;
-        vlSelf->testbench__DOT__dut__DOT__axis_tx_ready = 0U;
     } else {
+        if ((((IData)(vlSelf->testbench__DOT__dut__DOT__axis_tx_ready) 
+              & (IData)(vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__valid_o_l)) 
+             & ((IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count) 
+                >> 8U))) {
+            __Vdly__testbench__DOT__dut__DOT__axis_tx_ready = 0U;
+        } else if ((0U == (IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count))) {
+            __Vdly__testbench__DOT__dut__DOT__axis_tx_ready = 0U;
+        } else if ((0x1c7U == (IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count))) {
+            __Vdly__testbench__DOT__dut__DOT__axis_tx_ready = 1U;
+        }
         if (((0x1c7U == (IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count)) 
              & (~ (IData)(vlSelf->testbench__DOT__dut__DOT__axis_rx_valid)))) {
             __Vdly__testbench__DOT__dut__DOT__axis_rx_last = 0U;
@@ -210,16 +232,20 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024ro
         }
         if (((IData)(vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__valid_o_l) 
              & (IData)(vlSelf->testbench__DOT__dut__DOT__axis_tx_ready))) {
-            vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l 
-                = vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__mem
-                [vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__read_addr_l];
-        }
-        if ((0U == (IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count))) {
-            vlSelf->testbench__DOT__dut__DOT__axis_tx_ready = 0U;
-        } else if ((0x1c7U == (IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count))) {
-            vlSelf->testbench__DOT__dut__DOT__axis_tx_ready = 1U;
+            if ((0x100U & (IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count))) {
+                vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_r 
+                    = vlSelf->testbench__DOT__dut__DOT__axis_tx_data;
+            }
+            if ((1U & (~ ((IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count) 
+                          >> 8U)))) {
+                vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l 
+                    = vlSelf->testbench__DOT__dut__DOT__axis_tx_data;
+            }
         }
     }
+    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__read_addr_l 
+        = (vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l 
+           >> 0x1bU);
     vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__din_sync_shift 
         = __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__din_sync_shift;
     vlSelf->testbench__DOT__dut__DOT__axis_rx_last 
@@ -228,20 +254,21 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024ro
         = __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_r_shift;
     vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l_shift 
         = __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__tx_data_l_shift;
+    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l 
+        = __Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l;
     vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_r_shift 
         = __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_r_shift;
     vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_l_shift 
         = __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__rx_data_l_shift;
     vlSelf->testbench__DOT__dut__DOT__axis_rx_valid 
         = __Vdly__testbench__DOT__dut__DOT__axis_rx_valid;
-    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__read_addr_l 
-        = (vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l 
-           >> 0x1bU);
+    vlSelf->testbench__DOT__dut__DOT__axis_tx_data 
+        = vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__mem
+        [vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__read_addr_l];
+    vlSelf->testbench__DOT__dut__DOT__axis_tx_ready 
+        = __Vdly__testbench__DOT__dut__DOT__axis_tx_ready;
     vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count 
         = __Vdly__testbench__DOT__dut__DOT__i2s2_inst__DOT__count;
-    vlSelf->testbench__DOT__dut__DOT__tx_lr_clk_o = 
-        (1U & ((IData)(vlSelf->testbench__DOT__dut__DOT__i2s2_inst__DOT__count) 
-               >> 8U));
     vlSelf->testbench__DOT__dut__DOT__tx_data_o = (
                                                    ((0x18U 
                                                      >= 
@@ -267,10 +294,10 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024ro
         = vlSelf->testbench__DOT__reset_i;
 }
 
-VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__4(Vtestbench___024root* vlSelf) {
+VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vtestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtestbench___024root___nba_sequent__TOP__4\n"); );
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtestbench___024root___nba_sequent__TOP__3\n"); );
     // Init
     CData/*0:0*/ __Vdly__testbench__DOT__rg__DOT__ctr_lo_r;
     __Vdly__testbench__DOT__rg__DOT__ctr_lo_r = 0;
@@ -295,15 +322,6 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__4(Vtestbench___024ro
                                        ^ (0xaU == (IData)(vlSelf->testbench__DOT__rg__DOT__ctr_hi_r)));
 }
 
-VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__5(Vtestbench___024root* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtestbench___024root___nba_sequent__TOP__5\n"); );
-    // Body
-    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l 
-        = vlSelf->__Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l;
-}
-
 void Vtestbench___024root___eval_nba(Vtestbench___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vtestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -315,19 +333,13 @@ void Vtestbench___024root___eval_nba(Vtestbench___024root* vlSelf) {
     if (vlSelf->__VnbaTriggered.at(2U)) {
         Vtestbench___024root___nba_sequent__TOP__1(vlSelf);
     }
-    if (vlSelf->__VnbaTriggered.at(4U)) {
-        Vtestbench___024root___nba_sequent__TOP__2(vlSelf);
-    }
     if (vlSelf->__VnbaTriggered.at(3U)) {
-        Vtestbench___024root___nba_sequent__TOP__3(vlSelf);
+        Vtestbench___024root___nba_sequent__TOP__2(vlSelf);
         vlSelf->__Vm_traceActivity[2U] = 1U;
     }
     if (vlSelf->__VnbaTriggered.at(0U)) {
-        Vtestbench___024root___nba_sequent__TOP__4(vlSelf);
+        Vtestbench___024root___nba_sequent__TOP__3(vlSelf);
         vlSelf->__Vm_traceActivity[3U] = 1U;
-    }
-    if (vlSelf->__VnbaTriggered.at(4U)) {
-        Vtestbench___024root___nba_sequent__TOP__5(vlSelf);
     }
 }
 
@@ -345,7 +357,7 @@ void Vtestbench___024root___eval(Vtestbench___024root* vlSelf) {
     Vtestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtestbench___024root___eval\n"); );
     // Init
-    VlTriggerVec<6> __VpreTriggered;
+    VlTriggerVec<5> __VpreTriggered;
     IData/*31:0*/ __VnbaIterCount;
     CData/*0:0*/ __VnbaContinue;
     // Body
@@ -394,7 +406,7 @@ void Vtestbench___024root___timing_resume(Vtestbench___024root* vlSelf) {
     Vtestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtestbench___024root___timing_resume\n"); );
     // Body
-    if (vlSelf->__VactTriggered.at(5U)) {
+    if (vlSelf->__VactTriggered.at(4U)) {
         vlSelf->__VdlySched.resume();
     }
 }
