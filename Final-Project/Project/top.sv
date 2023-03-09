@@ -73,7 +73,7 @@ module top
    logic axis_clk;
 
   // This is a PLL! You'll learn about these later...
-  /*SB_PLL40_PAD 
+  SB_PLL40_PAD 
     #(.FEEDBACK_PATH("SIMPLE")
      ,.PLLOUT_SELECT("GENCLK")
      ,.DIVR(4'b0000)
@@ -89,7 +89,7 @@ module top
      );
   
    assign axis_clk = clk_o;
-   /*axis_i2s2 
+   axis_i2s2 
      #()
    i2s2_inst
      (.axis_clk(axis_clk)
@@ -113,26 +113,17 @@ module top
      ,.rx_lrck(rx_lr_clk_o)
      ,.rx_sclk(rx_data_clk_o)
      ,.rx_sdin(rx_data_i)
-     );*/
+     );
 
-     ram_1r1w_sync
-     #(.width_p(24), .depth_p(32), .filename_p("sine.hex"))
-     LUT
-     (.clk_i(clk_12mhz_i), .reset_i(reset_r), .wr_valid_i(1'b0), .wr_data_i(24'd0),
-     .wr_addr_i(5'd0), .rd_addr_i(phase_l[31:27]), .rd_data_o(sine_val));
-     
-     logic [31:0] phase_l = 32'h0;
-     logic [31:0] frequency_step;
-     logic [23:0] sinewave;
-     logic [23:0] sine_val;
-     
-     assign frequency_step = 32'h8000000;
-     
-     always @(posedge clk_12mhz_i) begin
-         if(1'b1) begin
-             phase_l <= phase_l + frequency_step;
-             //sinewave <= sinewave_table[phase[31:24]];
-         end
-     end
+     sine
+     #()
+     sinegen
+     (.clk_i(clk_12mhz_i), 
+     .reset_i(reset_r),
+     .ready_i(axis_tx_ready),
+     .valid_o(axis_tx_valid),
+     .sine_o(axis_tx_data));
+     assign axis_tx_last = 1'b0;
+             
 
 endmodule

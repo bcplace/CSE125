@@ -40,10 +40,10 @@ void Vtestbench___024root___eval_triggers__act(Vtestbench___024root* vlSelf) {
                                       & (IData)(vlSelf->__Vtrigrprev__TOP__testbench__DOT__reset_i));
     vlSelf->__VactTriggered.at(2U) = ((IData)(vlSelf->testbench__DOT__reset_i) 
                                       & (~ (IData)(vlSelf->__Vtrigrprev__TOP__testbench__DOT__reset_i)));
-    vlSelf->__VactTriggered.at(3U) = ((IData)(vlSelf->testbench__DOT__clk_i) 
-                                      & (~ (IData)(vlSelf->__Vtrigrprev__TOP__testbench__DOT__clk_i)));
-    vlSelf->__VactTriggered.at(4U) = ((IData)(vlSelf->testbench__DOT__dut__DOT__clk_o) 
+    vlSelf->__VactTriggered.at(3U) = ((IData)(vlSelf->testbench__DOT__dut__DOT__clk_o) 
                                       & (~ (IData)(vlSelf->__Vtrigrprev__TOP__testbench__DOT__dut__DOT__clk_o)));
+    vlSelf->__VactTriggered.at(4U) = ((IData)(vlSelf->testbench__DOT__clk_i) 
+                                      & (~ (IData)(vlSelf->__Vtrigrprev__TOP__testbench__DOT__clk_i)));
     vlSelf->__VactTriggered.at(5U) = vlSelf->__VdlySched.awaitingCurrentTime();
     vlSelf->__Vtrigrprev__TOP__testbench__DOT__clk_i 
         = vlSelf->testbench__DOT__clk_i;

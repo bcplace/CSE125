@@ -26,7 +26,7 @@ VL_ATTR_COLD void Vtestbench___024root___eval_static__TOP(Vtestbench___024root* 
     Vtestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtestbench___024root___eval_static__TOP\n"); );
     // Body
-    vlSelf->testbench__DOT__dut__DOT__phase_l = 0U;
+    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l = 0U;
 }
 
 VL_ATTR_COLD void Vtestbench___024root___eval_final(Vtestbench___024root* vlSelf) {
@@ -124,10 +124,10 @@ VL_ATTR_COLD void Vtestbench___024root___dump_triggers__act(Vtestbench___024root
         VL_DBG_MSGF("         'act' region trigger index 2 is active: @(posedge testbench.reset_i)\n");
     }
     if (vlSelf->__VactTriggered.at(3U)) {
-        VL_DBG_MSGF("         'act' region trigger index 3 is active: @(posedge testbench.clk_i)\n");
+        VL_DBG_MSGF("         'act' region trigger index 3 is active: @(posedge testbench.dut.clk_o)\n");
     }
     if (vlSelf->__VactTriggered.at(4U)) {
-        VL_DBG_MSGF("         'act' region trigger index 4 is active: @(posedge testbench.dut.clk_o)\n");
+        VL_DBG_MSGF("         'act' region trigger index 4 is active: @(posedge testbench.clk_i)\n");
     }
     if (vlSelf->__VactTriggered.at(5U)) {
         VL_DBG_MSGF("         'act' region trigger index 5 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
@@ -154,10 +154,10 @@ VL_ATTR_COLD void Vtestbench___024root___dump_triggers__nba(Vtestbench___024root
         VL_DBG_MSGF("         'nba' region trigger index 2 is active: @(posedge testbench.reset_i)\n");
     }
     if (vlSelf->__VnbaTriggered.at(3U)) {
-        VL_DBG_MSGF("         'nba' region trigger index 3 is active: @(posedge testbench.clk_i)\n");
+        VL_DBG_MSGF("         'nba' region trigger index 3 is active: @(posedge testbench.dut.clk_o)\n");
     }
     if (vlSelf->__VnbaTriggered.at(4U)) {
-        VL_DBG_MSGF("         'nba' region trigger index 4 is active: @(posedge testbench.dut.clk_o)\n");
+        VL_DBG_MSGF("         'nba' region trigger index 4 is active: @(posedge testbench.clk_i)\n");
     }
     if (vlSelf->__VnbaTriggered.at(5U)) {
         VL_DBG_MSGF("         'nba' region trigger index 5 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
@@ -186,24 +186,22 @@ VL_ATTR_COLD void Vtestbench___024root___ctor_var_reset(Vtestbench___024root* vl
     vlSelf->testbench__DOT__dut__DOT__rx_data_clk_o = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__rx_data_i = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__led_o = VL_RAND_RESET_I(5);
-    vlSelf->testbench__DOT__dut__DOT__axis_tx_data = VL_RAND_RESET_I(24);
-    vlSelf->testbench__DOT__dut__DOT__axis_tx_valid = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__axis_tx_ready = VL_RAND_RESET_I(1);
-    vlSelf->testbench__DOT__dut__DOT__axis_tx_last = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__axis_rx_data = VL_RAND_RESET_I(24);
     vlSelf->testbench__DOT__dut__DOT__axis_rx_valid = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__axis_rx_ready = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__axis_rx_last = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__clk_o = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__axis_clk = VL_RAND_RESET_I(1);
-    vlSelf->testbench__DOT__dut__DOT__phase_l = VL_RAND_RESET_I(32);
-    vlSelf->testbench__DOT__dut__DOT__sinewave = VL_RAND_RESET_I(24);
     vlSelf->testbench__DOT__dut__DOT__sync_a__DOT__q_r = VL_RAND_RESET_I(1);
     vlSelf->testbench__DOT__dut__DOT__sync_b__DOT__q_r = VL_RAND_RESET_I(1);
+    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l = VL_RAND_RESET_I(32);
+    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__valid_o_l = VL_RAND_RESET_I(1);
+    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__tx_valid_data = VL_RAND_RESET_I(1);
     for (int __Vi0 = 0; __Vi0 < 32; ++__Vi0) {
-        vlSelf->testbench__DOT__dut__DOT__LUT__DOT__mem[__Vi0] = VL_RAND_RESET_I(24);
+        vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__mem[__Vi0] = VL_RAND_RESET_I(24);
     }
-    vlSelf->testbench__DOT__dut__DOT__LUT__DOT__read_addr_l = VL_RAND_RESET_I(5);
+    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__read_addr_l = VL_RAND_RESET_I(5);
     vlSelf->__Vtrigrprev__TOP__testbench__DOT__clk_i = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigrprev__TOP__testbench__DOT__reset_i = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigrprev__TOP__testbench__DOT__dut__DOT__clk_o = VL_RAND_RESET_I(1);

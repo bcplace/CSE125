@@ -34,7 +34,7 @@ VL_INLINE_OPT VlCoroutine Vtestbench___024root___eval_initial__TOP__1(Vtestbench
     // Body
     while (1U) {
         co_await vlSelf->__VdlySched.delay(0x1388U, 
-                                           "provided_modules/nonsynth_clock_gen.sv", 
+                                           "../provided_modules/nonsynth_clock_gen.sv", 
                                            11);
         vlSelf->testbench__DOT__clk_i = (1U & (~ (IData)(vlSelf->testbench__DOT__clk_i)));
     }
@@ -69,16 +69,20 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__2(Vtestbench___024ro
     Vtestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtestbench___024root___nba_sequent__TOP__2\n"); );
     // Init
-    IData/*31:0*/ __Vdly__testbench__DOT__dut__DOT__phase_l;
-    __Vdly__testbench__DOT__dut__DOT__phase_l = 0;
+    IData/*31:0*/ __Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l;
+    __Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l = 0;
     // Body
-    __Vdly__testbench__DOT__dut__DOT__phase_l = vlSelf->testbench__DOT__dut__DOT__phase_l;
-    __Vdly__testbench__DOT__dut__DOT__phase_l = ((IData)(0x8000000U) 
-                                                 + vlSelf->testbench__DOT__dut__DOT__phase_l);
-    vlSelf->testbench__DOT__dut__DOT__LUT__DOT__read_addr_l 
-        = (vlSelf->testbench__DOT__dut__DOT__phase_l 
+    __Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l 
+        = vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l;
+    __Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l 
+        = ((IData)(0x8000000U) + vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l);
+    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__valid_o_l = 0U;
+    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__valid_o_l = 1U;
+    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__LUT__DOT__read_addr_l 
+        = (vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l 
            >> 0x1bU);
-    vlSelf->testbench__DOT__dut__DOT__phase_l = __Vdly__testbench__DOT__dut__DOT__phase_l;
+    vlSelf->testbench__DOT__dut__DOT__sinegen__DOT__phase_l 
+        = __Vdly__testbench__DOT__dut__DOT__sinegen__DOT__phase_l;
 }
 
 VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024root* vlSelf) {
@@ -138,7 +142,7 @@ void Vtestbench___024root___eval_nba(Vtestbench___024root* vlSelf) {
     if (vlSelf->__VnbaTriggered.at(2U)) {
         Vtestbench___024root___nba_sequent__TOP__1(vlSelf);
     }
-    if (vlSelf->__VnbaTriggered.at(3U)) {
+    if (vlSelf->__VnbaTriggered.at(4U)) {
         Vtestbench___024root___nba_sequent__TOP__2(vlSelf);
         vlSelf->__Vm_traceActivity[2U] = 1U;
     }
@@ -146,7 +150,7 @@ void Vtestbench___024root___eval_nba(Vtestbench___024root* vlSelf) {
         Vtestbench___024root___nba_sequent__TOP__3(vlSelf);
         vlSelf->__Vm_traceActivity[3U] = 1U;
     }
-    if (vlSelf->__VnbaTriggered.at(4U)) {
+    if (vlSelf->__VnbaTriggered.at(3U)) {
         Vtestbench___024root___nba_sequent__TOP__4(vlSelf);
         vlSelf->__Vm_traceActivity[4U] = 1U;
     }
