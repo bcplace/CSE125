@@ -120,10 +120,10 @@ module top
      );
 
      sine
-     #()
+     #(.frequency_step(32'h05152EC)) //Freq_step = ((2^32) * (frequency/99.5KHz))
      sinegen
      (.clk_i(axis_clk),
-     .sample_clk(tx_lr_clk_o),
+     .axis_last(axis_tx_last),
      .reset_i(reset_r),
      .ready_i(axis_tx_ready),
      .valid_o(axis_tx_valid),
@@ -131,7 +131,7 @@ module top
      
     
      
-     assign axis_tx_last = 1'b0;
+     //assign axis_tx_last = 1'b0;
              
 
 endmodule

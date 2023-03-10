@@ -21,10 +21,10 @@ Info: constrained 'rx_data_i' to bel 'X17/Y31/io0'
 Info: Packing constants..
 Info: Packing IOs..
 Info: Packing LUT-FFs..
-Info:      143 LCs used as LUT4 only
-Info:       90 LCs used as LUT4 and DFF
+Info:      190 LCs used as LUT4 only
+Info:      138 LCs used as LUT4 and DFF
 Info: Packing non-LUT FFs..
-Info:        9 LCs used as DFF only
+Info:       54 LCs used as DFF only
 Info: Packing carries..
 Info:        8 LCs used as CARRY only
 Info: Packing indirect carry+LUT pairs...
@@ -38,23 +38,24 @@ Info:     Input frequency of PLL 'pll_inst' is constrained to 12.0 MHz
 Info:     VCO frequency of PLL 'pll_inst' is constrained to 816.3 MHz
 Info:     Derived frequency constraint of 25.5 MHz for net tx_main_clk_o$SB_IO_OUT
 Info: Promoting globals..
-Info: promoting tx_main_clk_o$SB_IO_OUT (fanout 99)
-Info: promoting reset_r [reset] (fanout 24)
-Info: promoting sinegen.valid_o_l_SB_LUT4_I2_O[0] [cen] (fanout 32)
-Info: promoting i2s2_inst.tx_data_l_SB_DFFESR_Q_E [cen] (fanout 24)
-Info: promoting tx_data_o_SB_LUT4_O_I2_SB_LUT4_I1_O [cen] (fanout 24)
+Info: promoting tx_main_clk_o$SB_IO_OUT (fanout 192)
+Info: promoting reset_r [reset] (fanout 46)
+Info: promoting sinegen.valid_o_l_SB_LUT4_I3_O[0] [cen] (fanout 85)
+Info: promoting tx_data_o_SB_LUT4_O_I3_SB_LUT4_I2_O [cen] (fanout 24)
+Info: promoting tx_data_o_SB_LUT4_O_I3_SB_LUT4_I1_O [cen] (fanout 24)
+Info: promoting sinegen.axis_last_l_SB_LUT4_I2_O[2] [cen] (fanout 23)
 Info: Constraining chains...
-Info:        5 LCs used to legalise carry chains.
-Info: Checksum: 0xb23bb223
+Info:        6 LCs used to legalise carry chains.
+Info: Checksum: 0xff9e617a
 
 Info: Annotating ports with timing budgets for target frequency 12.00 MHz
-Info: Checksum: 0x253821f8
+Info: Checksum: 0xd58f51ce
 
 Info: Device utilisation:
-Info: 	         ICESTORM_LC:   252/ 5280     4%
+Info: 	         ICESTORM_LC:   393/ 5280     7%
 Info: 	        ICESTORM_RAM:     0/   30     0%
 Info: 	               SB_IO:    18/   96    18%
-Info: 	               SB_GB:     5/    8    62%
+Info: 	               SB_GB:     6/    8    75%
 Info: 	        ICESTORM_PLL:     1/    1   100%
 Info: 	         SB_WARMBOOT:     0/    1     0%
 Info: 	        ICESTORM_DSP:     0/    8     0%
@@ -68,213 +69,221 @@ Info: 	         SB_RGBA_DRV:     0/    1     0%
 Info: 	      ICESTORM_SPRAM:     0/    4     0%
 
 Info: Placed 19 cells based on constraints.
-Info: Creating initial analytic placement for 209 cells, random placement wirelen = 4848.
-Info:     at initial placer iter 0, wirelen = 67
-Info:     at initial placer iter 1, wirelen = 63
-Info:     at initial placer iter 2, wirelen = 66
-Info:     at initial placer iter 3, wirelen = 63
-Info: Running main analytical placer, max placement attempts per cell = 10000.
-Info:     at iteration #1, type ICESTORM_LC: wirelen solved = 64, spread = 575, legal = 644; time = 0.00s
-Info:     at iteration #1, type SB_GB: wirelen solved = 625, spread = 711, legal = 702; time = 0.00s
-Info:     at iteration #1, type ALL: wirelen solved = 66, spread = 613, legal = 673; time = 0.00s
-Info:     at iteration #2, type ICESTORM_LC: wirelen solved = 180, spread = 562, legal = 607; time = 0.00s
-Info:     at iteration #2, type SB_GB: wirelen solved = 540, spread = 618, legal = 608; time = 0.00s
-Info:     at iteration #2, type ALL: wirelen solved = 70, spread = 655, legal = 696; time = 0.00s
-Info:     at iteration #3, type ICESTORM_LC: wirelen solved = 206, spread = 554, legal = 655; time = 0.00s
-Info:     at iteration #3, type SB_GB: wirelen solved = 598, spread = 679, legal = 664; time = 0.00s
-Info:     at iteration #3, type ALL: wirelen solved = 115, spread = 598, legal = 626; time = 0.00s
-Info:     at iteration #4, type ICESTORM_LC: wirelen solved = 224, spread = 558, legal = 603; time = 0.00s
-Info:     at iteration #4, type SB_GB: wirelen solved = 558, spread = 622, legal = 610; time = 0.00s
-Info:     at iteration #4, type ALL: wirelen solved = 143, spread = 529, legal = 617; time = 0.00s
-Info:     at iteration #5, type ICESTORM_LC: wirelen solved = 238, spread = 521, legal = 573; time = 0.00s
-Info:     at iteration #5, type SB_GB: wirelen solved = 520, spread = 604, legal = 598; time = 0.00s
-Info:     at iteration #5, type ALL: wirelen solved = 171, spread = 498, legal = 553; time = 0.00s
-Info:     at iteration #6, type ICESTORM_LC: wirelen solved = 265, spread = 511, legal = 557; time = 0.00s
-Info:     at iteration #6, type SB_GB: wirelen solved = 499, spread = 579, legal = 561; time = 0.00s
-Info:     at iteration #6, type ALL: wirelen solved = 192, spread = 498, legal = 556; time = 0.00s
-Info:     at iteration #7, type ICESTORM_LC: wirelen solved = 278, spread = 484, legal = 578; time = 0.00s
-Info:     at iteration #7, type SB_GB: wirelen solved = 513, spread = 598, legal = 576; time = 0.00s
-Info:     at iteration #7, type ALL: wirelen solved = 204, spread = 558, legal = 574; time = 0.00s
-Info:     at iteration #8, type ICESTORM_LC: wirelen solved = 278, spread = 510, legal = 559; time = 0.00s
-Info:     at iteration #8, type SB_GB: wirelen solved = 503, spread = 580, legal = 559; time = 0.00s
-Info:     at iteration #8, type ALL: wirelen solved = 214, spread = 522, legal = 577; time = 0.00s
-Info:     at iteration #9, type ICESTORM_LC: wirelen solved = 324, spread = 518, legal = 622; time = 0.00s
-Info:     at iteration #9, type SB_GB: wirelen solved = 551, spread = 645, legal = 622; time = 0.00s
-Info:     at iteration #9, type ALL: wirelen solved = 247, spread = 502, legal = 554; time = 0.00s
-Info:     at iteration #10, type ICESTORM_LC: wirelen solved = 321, spread = 505, legal = 568; time = 0.00s
-Info:     at iteration #10, type SB_GB: wirelen solved = 494, spread = 575, legal = 566; time = 0.00s
-Info:     at iteration #10, type ALL: wirelen solved = 244, spread = 507, legal = 564; time = 0.00s
-Info: HeAP Placer Time: 0.12s
-Info:   of which solving equations: 0.09s
-Info:   of which spreading cells: 0.01s
-Info:   of which strict legalisation: 0.01s
+Info: Creating initial analytic placement for 330 cells, random placement wirelen = 7899.
+Info:     at initial placer iter 0, wirelen = 108
+Info:     at initial placer iter 1, wirelen = 109
+Info:     at initial placer iter 2, wirelen = 124
+Info:     at initial placer iter 3, wirelen = 109
+Info: Running main analytical placer, max placement attempts per cell = 21840.
+Info:     at iteration #1, type ALL: wirelen solved = 124, spread = 1002, legal = 1177; time = 0.01s
+Info:     at iteration #2, type ALL: wirelen solved = 151, spread = 1004, legal = 1233; time = 0.01s
+Info:     at iteration #3, type ALL: wirelen solved = 179, spread = 811, legal = 1115; time = 0.01s
+Info:     at iteration #4, type ALL: wirelen solved = 231, spread = 800, legal = 1190; time = 0.01s
+Info:     at iteration #5, type ALL: wirelen solved = 256, spread = 820, legal = 1194; time = 0.01s
+Info:     at iteration #6, type ALL: wirelen solved = 296, spread = 862, legal = 1161; time = 0.01s
+Info:     at iteration #7, type ALL: wirelen solved = 329, spread = 870, legal = 1192; time = 0.01s
+Info:     at iteration #8, type ALL: wirelen solved = 356, spread = 819, legal = 1325; time = 0.01s
+Info: HeAP Placer Time: 0.10s
+Info:   of which solving equations: 0.06s
+Info:   of which spreading cells: 0.00s
+Info:   of which strict legalisation: 0.02s
 
 Info: Running simulated annealing placer for refinement.
-Info:   at iteration #1: temp = 0.000000, timing cost = 50, wirelen = 553
-Info:   at iteration #5: temp = 0.000000, timing cost = 66, wirelen = 448
-Info:   at iteration #10: temp = 0.000000, timing cost = 69, wirelen = 418
-Info:   at iteration #15: temp = 0.000000, timing cost = 62, wirelen = 406
-Info:   at iteration #20: temp = 0.000000, timing cost = 61, wirelen = 389
-Info:   at iteration #22: temp = 0.000000, timing cost = 61, wirelen = 386 
-Info: SA placement time 0.09s
+Info:   at iteration #1: temp = 0.000000, timing cost = 69, wirelen = 1115
+Info:   at iteration #5: temp = 0.000000, timing cost = 75, wirelen = 851
+Info:   at iteration #10: temp = 0.000000, timing cost = 68, wirelen = 774
+Info:   at iteration #15: temp = 0.000000, timing cost = 66, wirelen = 755
+Info:   at iteration #20: temp = 0.000000, timing cost = 67, wirelen = 732
+Info:   at iteration #20: temp = 0.000000, timing cost = 67, wirelen = 732 
+Info: SA placement time 0.14s
 
-Info: Max frequency for clock 'tx_main_clk_o$SB_IO_OUT_$glb_clk': 42.88 MHz (PASS at 25.51 MHz)
+Info: Max frequency for clock 'tx_main_clk_o$SB_IO_OUT_$glb_clk': 40.80 MHz (PASS at 25.51 MHz)
 
-Info: Max delay <async>                                  -> posedge tx_main_clk_o$SB_IO_OUT_$glb_clk: 4.01 ns
-Info: Max delay posedge tx_main_clk_o$SB_IO_OUT_$glb_clk -> <async>                                 : 17.65 ns
+Info: Max delay <async>                                  -> posedge tx_main_clk_o$SB_IO_OUT_$glb_clk: 6.76 ns
+Info: Max delay posedge tx_main_clk_o$SB_IO_OUT_$glb_clk -> <async>                                 : 17.70 ns
 
 Info: Slack histogram:
-Info:  legend: * represents 1 endpoint(s)
-Info:          + represents [1,1) endpoint(s)
-Info: [ 15878,  19017) |******************** 
-Info: [ 19017,  22156) |***********************************+
-Info: [ 22156,  25295) |***************+
-Info: [ 25295,  28434) |********************************************+
-Info: [ 28434,  31573) |*********************************+
-Info: [ 31573,  34712) |*************************************+
-Info: [ 34712,  37851) |************************************************************ 
-Info: [ 37851,  40990) | 
-Info: [ 40990,  44129) | 
-Info: [ 44129,  47268) | 
-Info: [ 47268,  50407) | 
-Info: [ 50407,  53546) | 
-Info: [ 53546,  56685) | 
-Info: [ 56685,  59824) | 
-Info: [ 59824,  62963) | 
-Info: [ 62963,  66102) |+
-Info: [ 66102,  69241) | 
-Info: [ 69241,  72380) | 
-Info: [ 72380,  75519) | 
-Info: [ 75519,  78658) |**+
-Info: Checksum: 0xfcf57e26
+Info:  legend: * represents 3 endpoint(s)
+Info:          + represents [1,3) endpoint(s)
+Info: [ 14691,  17902) |*************+
+Info: [ 17902,  21113) |*******************************+
+Info: [ 21113,  24324) |***+
+Info: [ 24324,  27535) |***********************+
+Info: [ 27535,  30746) |***********************************+
+Info: [ 30746,  33957) |***********************+
+Info: [ 33957,  37168) |************************************************************ 
+Info: [ 37168,  40379) | 
+Info: [ 40379,  43590) | 
+Info: [ 43590,  46801) | 
+Info: [ 46801,  50012) | 
+Info: [ 50012,  53223) | 
+Info: [ 53223,  56434) | 
+Info: [ 56434,  59645) | 
+Info: [ 59645,  62856) | 
+Info: [ 62856,  66067) |+
+Info: [ 66067,  69278) | 
+Info: [ 69278,  72489) | 
+Info: [ 72489,  75700) | 
+Info: [ 75700,  78911) |*+
+Info: Checksum: 0x76b92fb7
 
 Info: Routing..
 Info: Setting up routing queue.
-Info: Routing 900 arcs.
+Info: Routing 1260 arcs.
 Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
 Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
-Info:       1000 |      122        836 |  122   836 |        77|       0.08       0.08|
-Info:       1076 |      122        913 |    0    77 |         0|       0.02       0.09|
+Info:       1000 |       84        863 |   84   863 |       385|       0.09       0.09|
+Info:       1432 |      117       1256 |   33   393 |         0|       0.04       0.13|
 Info: Routing complete.
-Info: Router1 time 0.09s
-Info: Checksum: 0xea7de6c9
+Info: Router1 time 0.13s
+Info: Checksum: 0xe3bc40eb
 
 Info: Critical path report for clock 'tx_main_clk_o$SB_IO_OUT_$glb_clk' (posedge -> posedge):
 Info: curr total
-Info:  1.4  1.4  Source rx_lr_clk_o_SB_LUT4_I2_O_SB_LUT4_O_LC.O
-Info:  3.0  4.3    Net i2s2_inst.count[7] budget 0.000000 ns (13,24) -> (12,26)
-Info:                Sink tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_CARRY_CO$CARRY.I3
+Info:  1.4  1.4  Source rx_lr_clk_o_SB_LUT4_I2_O_SB_LUT4_O_3_LC.O
+Info:  1.8  3.2    Net i2s2_inst.count[4] budget 0.000000 ns (14,27) -> (13,27)
+Info:                Sink tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_2$CARRY.I3
 Info:                Defined in:
 Info:                  top.sv:98.4-120.7
 Info:                  ../../provided_modules/axis_i2s2.v:51.18-51.27
 Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:33.23-33.24
-Info:  0.9  5.2  Source tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_CARRY_CO$CARRY.O
-Info:  1.8  7.0    Net tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_CARRY_CO_I1[4] budget 0.000000 ns (12,26) -> (12,26)
-Info:                Sink tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_CARRY_CO$CARRY.I2
+Info:  0.9  4.0  Source tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_2$CARRY.O
+Info:  1.8  5.8    Net tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2[0] budget 0.000000 ns (13,27) -> (13,28)
+Info:                Sink $nextpnr_ICESTORM_LC_1.I1
 Info:                Defined in:
 Info:                  top.sv:98.4-120.7
 Info:                  ../../provided_modules/axis_i2s2.v:103.13-103.32
 Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:49.21-49.23
-Info:  0.6  7.6  Source tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_CARRY_CO$CARRY.COUT
-Info:  0.7  8.2    Net $nextpnr_ICESTORM_LC_2$I3 budget 0.660000 ns (12,26) -> (12,26)
-Info:                Sink $nextpnr_ICESTORM_LC_2.I3
-Info:  0.9  9.1  Source $nextpnr_ICESTORM_LC_2.O
-Info:  1.8 10.9    Net tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_I2[3] budget 15.215000 ns (12,26) -> (13,26)
-Info:                Sink tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_LC.I2
+Info:  0.7  6.5  Source $nextpnr_ICESTORM_LC_1.COUT
+Info:  0.0  6.5    Net $nextpnr_ICESTORM_LC_1$O budget 0.000000 ns (13,28) -> (13,28)
+Info:                Sink tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_1$CARRY.CIN
+Info:  0.3  6.7  Source tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_1$CARRY.COUT
+Info:  0.0  6.7    Net tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2[1] budget 0.000000 ns (13,28) -> (13,28)
+Info:                Sink tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.CIN
 Info:                Defined in:
 Info:                  top.sv:98.4-120.7
 Info:                  ../../provided_modules/axis_i2s2.v:103.36-103.54
-Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:37.23-37.25
-Info:  1.2 12.1  Source tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_LC.O
-Info:  1.8 13.8    Net tx_data_o_SB_LUT4_O_I2[0] budget 5.071000 ns (13,26) -> (13,26)
-Info:                Sink tx_data_o_SB_LUT4_O_I2_SB_LUT4_I1_LC.I1
+Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3  7.0  Source tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.COUT
+Info:  0.0  7.0    Net tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2[2] budget 0.000000 ns (13,28) -> (13,28)
+Info:                Sink tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_CARRY_CO$CARRY.CIN
+Info:                Defined in:
+Info:                  top.sv:98.4-120.7
+Info:                  ../../provided_modules/axis_i2s2.v:103.36-103.54
+Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3  7.3  Source tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_CARRY_CO$CARRY.COUT
+Info:  0.7  8.0    Net $nextpnr_ICESTORM_LC_2$I3 budget 0.660000 ns (13,28) -> (13,28)
+Info:                Sink $nextpnr_ICESTORM_LC_2.I3
+Info:  0.9  8.8  Source $nextpnr_ICESTORM_LC_2.O
+Info:  1.8 10.6    Net tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2[3] budget 15.215000 ns (13,28) -> (13,27)
+Info:                Sink tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_LC.I2
 Info:                Defined in:
 Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:  1.2 15.1  Source tx_data_o_SB_LUT4_O_I2_SB_LUT4_I1_LC.O
-Info:  2.3 17.4    Net tx_data_o_SB_LUT4_O_I2_SB_LUT4_I1_O budget 5.071000 ns (13,26) -> (13,31)
-Info:                Sink $gbuf_tx_data_o_SB_LUT4_O_I2_SB_LUT4_I1_O_$glb_ce.USER_SIGNAL_TO_GLOBAL_BUFFER
-Info:  1.6 19.0  Source $gbuf_tx_data_o_SB_LUT4_O_I2_SB_LUT4_I1_O_$glb_ce.GLOBAL_BUFFER_OUTPUT
-Info:  0.7 19.7    Net tx_data_o_SB_LUT4_O_I2_SB_LUT4_I1_O_$glb_ce budget 5.071000 ns (13,31) -> (10,22)
-Info:                Sink i2s2_inst.tx_data_l_shift_SB_DFFESR_Q_DFFLC.CEN
-Info:  0.1 19.8  Setup i2s2_inst.tx_data_l_shift_SB_DFFESR_Q_DFFLC.CEN
-Info: 7.9 ns logic, 11.9 ns routing
+Info:  1.2 11.8  Source tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_LC.O
+Info:  1.8 13.6    Net tx_data_o_SB_LUT4_O_I3[1] budget 5.071000 ns (13,27) -> (13,28)
+Info:                Sink tx_data_o_SB_LUT4_O_I3_SB_LUT4_I1_LC.I1
+Info:                Defined in:
+Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2 14.8  Source tx_data_o_SB_LUT4_O_I3_SB_LUT4_I1_LC.O
+Info:  2.8 17.6    Net tx_data_o_SB_LUT4_O_I3_SB_LUT4_I1_O budget 5.071000 ns (13,28) -> (6,31)
+Info:                Sink $gbuf_tx_data_o_SB_LUT4_O_I3_SB_LUT4_I1_O_$glb_ce.USER_SIGNAL_TO_GLOBAL_BUFFER
+Info:  1.6 19.2  Source $gbuf_tx_data_o_SB_LUT4_O_I3_SB_LUT4_I1_O_$glb_ce.GLOBAL_BUFFER_OUTPUT
+Info:  0.7 19.9    Net tx_data_o_SB_LUT4_O_I3_SB_LUT4_I1_O_$glb_ce budget 5.071000 ns (6,31) -> (14,19)
+Info:                Sink i2s2_inst.tx_data_r_shift_SB_DFFESR_Q_DFFLC.CEN
+Info:  0.1 20.0  Setup i2s2_inst.tx_data_r_shift_SB_DFFESR_Q_DFFLC.CEN
+Info: 8.8 ns logic, 11.2 ns routing
 
 Info: Critical path report for cross-domain path '<async>' -> 'posedge tx_main_clk_o$SB_IO_OUT_$glb_clk':
 Info: curr total
 Info:  0.0  0.0  Source reset_n_async_unsafe_i$sb_io.D_IN_0
-Info:  3.2  3.2    Net reset_n_async_unsafe_i$SB_IO_IN budget 37.966000 ns (16,0) -> (14,1)
+Info:  5.7  5.7    Net reset_n_async_unsafe_i$SB_IO_IN budget 37.966000 ns (16,0) -> (16,24)
 Info:                Sink sync_a.q_r_SB_DFF_Q_DFFLC.I0
 Info:                Defined in:
 Info:                  top.sv:43.4-47.28
 Info:                  ../../provided_modules/dff.sv:8.16-8.19
-Info:  1.2  4.4  Setup sync_a.q_r_SB_DFF_Q_DFFLC.I0
-Info: 1.2 ns logic, 3.2 ns routing
+Info:  1.2  7.0  Setup sync_a.q_r_SB_DFF_Q_DFFLC.I0
+Info: 1.2 ns logic, 5.7 ns routing
 
 Info: Critical path report for cross-domain path 'posedge tx_main_clk_o$SB_IO_OUT_$glb_clk' -> '<async>':
 Info: curr total
-Info:  1.4  1.4  Source rx_lr_clk_o_SB_LUT4_I2_O_SB_LUT4_O_LC.O
-Info:  3.0  4.3    Net i2s2_inst.count[7] budget 0.000000 ns (13,24) -> (12,26)
-Info:                Sink tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_CARRY_CO$CARRY.I3
+Info:  1.4  1.4  Source rx_lr_clk_o_SB_LUT4_I2_O_SB_LUT4_O_3_LC.O
+Info:  1.8  3.2    Net i2s2_inst.count[4] budget 0.000000 ns (14,27) -> (13,27)
+Info:                Sink tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_2$CARRY.I3
 Info:                Defined in:
 Info:                  top.sv:98.4-120.7
 Info:                  ../../provided_modules/axis_i2s2.v:51.18-51.27
 Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:33.23-33.24
-Info:  0.9  5.2  Source tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_CARRY_CO$CARRY.O
-Info:  1.8  7.0    Net tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_CARRY_CO_I1[4] budget 0.000000 ns (12,26) -> (12,26)
-Info:                Sink tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_CARRY_CO$CARRY.I2
+Info:  0.9  4.0  Source tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_2$CARRY.O
+Info:  1.8  5.8    Net tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2[0] budget 0.000000 ns (13,27) -> (13,28)
+Info:                Sink $nextpnr_ICESTORM_LC_1.I1
 Info:                Defined in:
 Info:                  top.sv:98.4-120.7
 Info:                  ../../provided_modules/axis_i2s2.v:103.13-103.32
 Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:49.21-49.23
-Info:  0.6  7.6  Source tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_CARRY_CO$CARRY.COUT
-Info:  0.7  8.2    Net $nextpnr_ICESTORM_LC_2$I3 budget 0.660000 ns (12,26) -> (12,26)
-Info:                Sink $nextpnr_ICESTORM_LC_2.I3
-Info:  0.9  9.1  Source $nextpnr_ICESTORM_LC_2.O
-Info:  1.8 10.9    Net tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_I2[3] budget 15.215000 ns (12,26) -> (13,26)
-Info:                Sink tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_LC.I2
+Info:  0.7  6.5  Source $nextpnr_ICESTORM_LC_1.COUT
+Info:  0.0  6.5    Net $nextpnr_ICESTORM_LC_1$O budget 0.000000 ns (13,28) -> (13,28)
+Info:                Sink tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_1$CARRY.CIN
+Info:  0.3  6.7  Source tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_1$CARRY.COUT
+Info:  0.0  6.7    Net tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2[1] budget 0.000000 ns (13,28) -> (13,28)
+Info:                Sink tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.CIN
 Info:                Defined in:
 Info:                  top.sv:98.4-120.7
 Info:                  ../../provided_modules/axis_i2s2.v:103.36-103.54
-Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:37.23-37.25
-Info:  1.2 12.1  Source tx_data_o_SB_LUT4_O_I2_SB_LUT4_O_LC.O
-Info:  1.8 13.8    Net tx_data_o_SB_LUT4_O_I2[0] budget 15.255000 ns (13,26) -> (13,26)
-Info:                Sink tx_data_o_SB_LUT4_O_LC.I2
+Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3  7.0  Source tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.COUT
+Info:  0.0  7.0    Net tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2[2] budget 0.000000 ns (13,28) -> (13,28)
+Info:                Sink tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_CARRY_CO$CARRY.CIN
+Info:                Defined in:
+Info:                  top.sv:98.4-120.7
+Info:                  ../../provided_modules/axis_i2s2.v:103.36-103.54
+Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3  7.3  Source tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_CARRY_CO$CARRY.COUT
+Info:  0.7  8.0    Net $nextpnr_ICESTORM_LC_2$I3 budget 0.660000 ns (13,28) -> (13,28)
+Info:                Sink $nextpnr_ICESTORM_LC_2.I3
+Info:  0.9  8.8  Source $nextpnr_ICESTORM_LC_2.O
+Info:  1.8 10.6    Net tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_I2[3] budget 15.215000 ns (13,28) -> (13,27)
+Info:                Sink tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_LC.I2
 Info:                Defined in:
 Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:  1.2 15.1  Source tx_data_o_SB_LUT4_O_LC.O
-Info:  3.8 18.9    Net tx_data_o$SB_IO_OUT budget 15.255000 ns (13,26) -> (16,31)
+Info:  1.2 11.8  Source tx_data_o_SB_LUT4_O_I3_SB_LUT4_O_LC.O
+Info:  2.3 14.1    Net tx_data_o_SB_LUT4_O_I3[1] budget 15.321000 ns (13,27) -> (15,27)
+Info:                Sink tx_data_o_SB_LUT4_O_LC.I3
+Info:                Defined in:
+Info:                  /opt/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.9 15.0  Source tx_data_o_SB_LUT4_O_LC.O
+Info:  3.1 18.0    Net tx_data_o$SB_IO_OUT budget 15.321000 ns (15,27) -> (16,31)
 Info:                Sink tx_data_o$sb_io.D_OUT_0
 Info:                Defined in:
 Info:                  top.sv:20.11-20.20
-Info: 6.2 ns logic, 12.7 ns routing
+Info: 6.7 ns logic, 11.3 ns routing
 
-Info: Max frequency for clock 'tx_main_clk_o$SB_IO_OUT_$glb_clk': 50.51 MHz (PASS at 25.51 MHz)
+Info: Max frequency for clock 'tx_main_clk_o$SB_IO_OUT_$glb_clk': 49.97 MHz (PASS at 25.51 MHz)
 
-Info: Max delay <async>                                  -> posedge tx_main_clk_o$SB_IO_OUT_$glb_clk: 4.38 ns
-Info: Max delay posedge tx_main_clk_o$SB_IO_OUT_$glb_clk -> <async>                                 : 18.85 ns
+Info: Max delay <async>                                  -> posedge tx_main_clk_o$SB_IO_OUT_$glb_clk: 6.95 ns
+Info: Max delay posedge tx_main_clk_o$SB_IO_OUT_$glb_clk -> <async>                                 : 18.03 ns
 
 Info: Slack histogram:
-Info:  legend: * represents 1 endpoint(s)
-Info:          + represents [1,1) endpoint(s)
-Info: [ 19400,  22378) |************+
-Info: [ 22378,  25356) |***********************+
-Info: [ 25356,  28334) |*********************************************+
-Info: [ 28334,  31312) |***************+
-Info: [ 31312,  34290) |************************+
-Info: [ 34290,  37268) |************************************************************ 
-Info: [ 37268,  40246) | 
-Info: [ 40246,  43224) | 
-Info: [ 43224,  46202) | 
-Info: [ 46202,  49180) | 
-Info: [ 49180,  52158) | 
-Info: [ 52158,  55136) | 
-Info: [ 55136,  58114) | 
-Info: [ 58114,  61092) | 
-Info: [ 61092,  64070) | 
-Info: [ 64070,  67048) |+
-Info: [ 67048,  70026) | 
-Info: [ 70026,  73004) | 
-Info: [ 73004,  75982) | 
-Info: [ 75982,  78960) |**+
+Info:  legend: * represents 3 endpoint(s)
+Info:          + represents [1,3) endpoint(s)
+Info: [ 19188,  22179) |**************+
+Info: [ 22179,  25170) |**************+
+Info: [ 25170,  28161) |**********************************************+
+Info: [ 28161,  31152) |**************+
+Info: [ 31152,  34143) |*****************************+
+Info: [ 34143,  37134) |************************************************************ 
+Info: [ 37134,  40125) | 
+Info: [ 40125,  43116) | 
+Info: [ 43116,  46107) | 
+Info: [ 46107,  49098) | 
+Info: [ 49098,  52089) | 
+Info: [ 52089,  55080) | 
+Info: [ 55080,  58071) | 
+Info: [ 58071,  61062) | 
+Info: [ 61062,  64053) | 
+Info: [ 64053,  67044) |+
+Info: [ 67044,  70035) | 
+Info: [ 70035,  73026) | 
+Info: [ 73026,  76017) | 
+Info: [ 76017,  79008) |*+
 
 Info: Program finished normally.
