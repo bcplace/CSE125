@@ -9,18 +9,18 @@ output [23:0]sine_o
 );
 
      ram_1r1w_sync //Outputs after 1 clock cycle
-     #(.width_p(24), .depth_p(32), .filename_p("sine.hex"))
+     #(.width_p(24), .depth_p(64), .filename_p("sine.hex"))
      LUT
      (.clk_i(clk_i), .reset_i(reset_i), .wr_valid_i(1'b0), .wr_data_i(24'd0),
-     .wr_addr_i(5'd0), .rd_addr_i(phase_l[31:27]), .rd_data_o(sine_val));
+     .wr_addr_i(5'd0), .rd_addr_i(phase_l[31:26]), .rd_data_o(sine_val));
      
-     logic [31:0] phase_l = 32'h0;
+     logic [31:0] phase_l = 32'd0;
      logic [31:0] frequency_step;
      logic [23:0] sine_val;
      logic valid_o_l;
      //logic [23:0] sine_o_l;
      
-     assign frequency_step = 32'h8000000;
+     assign frequency_step = 32'h0EE5FB; // Freq_step = ((2^32) * (frequency/1.45MHz)) <--(data_clk/2)
      
      always @(posedge clk_i) begin
          if(ready_i & valid_o) begin // Producer Yumi-Valid Handshake

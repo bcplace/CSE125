@@ -28,10 +28,6 @@ module top
   ,output rx_data_clk_o
   // Input data
   ,input  rx_data_i
-  
-  ,output ready_o
-  
-  ,output valid_o
 
   ,output [5:1] led_o);
 
@@ -135,8 +131,6 @@ module top
      
     
      
-     assign ready_o = axis_tx_ready;
-     assign valid_o = axis_tx_valid;
      assign axis_tx_last = 1'b0;
              
 
