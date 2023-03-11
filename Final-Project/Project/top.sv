@@ -8,6 +8,11 @@ module top
   // async: Not synchronized to clock
   // unsafe: Not De-Bounced
   ,input [3:1] button_async_unsafe_i
+  
+  //KeyPad Stuff
+  ,input [3:0] kpyd_row_i
+  
+  ,output [3:0] kpyd_col_o
 
   // Line Out (Green)
   // Main clock (for synchronization)
@@ -63,7 +68,7 @@ module top
    wire [23:0] axis_tx_data;
    wire        axis_tx_valid;
    wire        axis_tx_ready;
-   wire        axis_tx_last;
+   wire       axis_tx_last;
    
    wire [23:0] axis_rx_data;
    wire        axis_rx_valid;
@@ -119,15 +124,121 @@ module top
      ,.rx_sdin(rx_data_i)
      );
 
+
+     logic [3:0] kpyd2ssd_row_w;
+     logic [3:0] shift_o;
+     logic [3:0] kpyd2ssd_col_w;
+     
+     logic [23:0] lowB;
+     logic Blast;
+     logic Bvalid;
+     logic [23:0] D;
+     logic Dlast;
+     logic Dvalid;
+     logic [23:0] highE;
+     logic highElast;
+     logic highEvalid;
+     logic [23:0] E;
+     logic Elast;
+     logic Evalid;
+     
+     
+     logic [3:0] row_sync;
+     logic [3:0] col_sync;
+  
+     shift
+     #(.depth_p(4), .reset_val_p(4'b1110))
+     shifter
+     (.clk_i(axis_clk)
+     , .reset_i(reset_r)
+     , .data_i(shift_o[3])
+     , .data_o(shift_o));
+
+     always_comb begin
+      kpyd2ssd_col_w = shift_o;
+      case(kpyd_row_i)
+          4'b0111 : kpyd2ssd_row_w = 4'b1000;
+          4'b1011 : kpyd2ssd_row_w = 4'b0100;
+          4'b1101 : kpyd2ssd_row_w = 4'b0010;
+          4'b1110 : kpyd2ssd_row_w = 4'b0001;
+          default : kpyd2ssd_row_w = 4'b0000;
+      endcase
+     
+     end
+     assign kpyd_col_o = kpyd2ssd_col_w;
+  
+     always @(posedge axis_clk) begin
+       row_sync <= kpyd2ssd_row_w;
+       col_sync <= ~kpyd2ssd_col_w;
+       case({row_sync, col_sync})
+         8'b01000001 : begin 
+                       axis_tx_data <= lowB;
+                       axis_tx_last <= Blast;
+                       axis_tx_valid <= Bvalid;
+                       end
+         8'b00010001 : begin 
+                       axis_tx_data <= D;
+                       axis_tx_last <= Dlast;
+                       axis_tx_valid <= Dvalid;
+                       end
+         8'b00010010 : begin 
+                       axis_tx_data <= highE;
+                       axis_tx_last <= highElast;
+                       axis_tx_valid <= highEvalid;
+                       end
+         8'b10000001 : begin
+                       axis_tx_data <= E;
+                       axis_tx_last <= Elast;
+                       axis_tx_valid <= Evalid;
+                       end
+         default : begin 
+                       axis_tx_data <= 24'd0;
+                       axis_tx_last <= '0;
+                       axis_tx_valid <= '0;
+                       end
+        endcase
+     end
+
+     
      sine
-     #(.frequency_step(32'h05152EC)) //Freq_step = ((2^32) * (frequency/99.5KHz))
-     sinegen
+     #(.frequency_step(32'h0AD512)) //Freq_step = ((2^32) * (frequency/99.5KHz))
+     LowB
      (.clk_i(axis_clk),
-     .axis_last(axis_tx_last),
+     .axis_last(Blast),
      .reset_i(reset_r),
      .ready_i(axis_tx_ready),
-     .valid_o(axis_tx_valid),
-     .sine_o(axis_tx_data));
+     .valid_o(Bvalid),
+     .sine_o(lowB));
+     
+     sine
+     #(.frequency_step(32'h0CE1B9)) //Freq_step = ((2^32) * (frequency/99.5KHz))
+     Dnote
+     (.clk_i(axis_clk),
+     .axis_last(Dlast),
+     .reset_i(reset_r),
+     .ready_i(axis_tx_ready),
+     .valid_o(Dvalid),
+     .sine_o(D));
+     
+     sine
+     #(.frequency_step(32'h01CEB50)) //Freq_step = ((2^32) * (frequency/99.5KHz))
+     eHigh
+     (.clk_i(axis_clk),
+     .axis_last(highElast),
+     .reset_i(reset_r),
+     .ready_i(axis_tx_ready),
+     .valid_o(highEvalid),
+     .sine_o(highE));
+     
+     sine
+     #(.frequency_step(32'h0E758B)) //Freq_step = ((2^32) * (frequency/99.5KHz))
+     Enote
+     (.clk_i(axis_clk),
+     .axis_last(Elast),
+     .reset_i(reset_r),
+     .ready_i(axis_tx_ready),
+     .valid_o(Evalid),
+     .sine_o(E));
      
     
      
