@@ -33,7 +33,6 @@ class Vtestbench__Syms final : public VerilatedSyms {
     Vtestbench___024root           TOP;
 
     // SCOPE NAMES
-    VerilatedScope __Vscope_testbench__cg;
     VerilatedScope __Vscope_testbench__dut__cg;
 
     // CONSTRUCTORS

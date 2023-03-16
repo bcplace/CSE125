@@ -36,13 +36,13 @@ module shift
 	if(reset_i) begin
 		data_c <= reset_val_p;
 	end else begin
-		data_c <= data_n;
+		data_c <= {data_c[depth_p-2:0], data_i};
 	end
    end
    
-   always_comb begin
+   /*always_comb begin
    	data_n = {data_c[depth_p - 2:0], data_i};
-   end
+   end*/
    assign data_o = data_c;
 
 endmodule
