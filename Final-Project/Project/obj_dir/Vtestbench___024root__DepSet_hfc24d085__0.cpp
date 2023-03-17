@@ -20,10 +20,26 @@ VL_INLINE_OPT VlCoroutine Vtestbench___024root___eval_initial__TOP__0(Vtestbench
     __Vtemp_h9849538a__0[3U] = 0x76U;
     vlSymsp->_vm_contextp__->dumpfile(VL_CVT_PACK_STR_NW(4, __Vtemp_h9849538a__0));
     vlSymsp->_traceDumpOpen();
-    co_await vlSelf->__VdlySched.delay(0x3b9aca00U, 
-                                       "testbench.sv", 
-                                       36);
-    VL_FINISH_MT("testbench.sv", 37, "");
+    vlSelf->testbench__DOT__reset_i = 0U;
+    co_await vlSelf->__VdlySched.delay(0x30d40U, "testbench.sv", 
+                                       37);
+    vlSelf->testbench__DOT__reset_i = 1U;
+    vlSelf->testbench__DOT__keypad_row = 0xfU;
+    co_await vlSelf->__VdlySched.delay(0x493e0U, "testbench.sv", 
+                                       40);
+    vlSelf->testbench__DOT__keypad_row = 0xeU;
+    co_await vlSelf->__VdlySched.delay(0x493e0U, "testbench.sv", 
+                                       42);
+    vlSelf->testbench__DOT__keypad_row = 0xdU;
+    co_await vlSelf->__VdlySched.delay(0x493e0U, "testbench.sv", 
+                                       44);
+    vlSelf->testbench__DOT__keypad_row = 0xbU;
+    co_await vlSelf->__VdlySched.delay(0x493e0U, "testbench.sv", 
+                                       46);
+    vlSelf->testbench__DOT__keypad_row = 8U;
+    co_await vlSelf->__VdlySched.delay(0x493e0U, "testbench.sv", 
+                                       48);
+    VL_FINISH_MT("testbench.sv", 49, "");
 }
 
 #ifdef VL_DEBUG
@@ -35,19 +51,9 @@ void Vtestbench___024root___eval_triggers__act(Vtestbench___024root* vlSelf) {
     Vtestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtestbench___024root___eval_triggers__act\n"); );
     // Body
-    vlSelf->__VactTriggered.at(0U) = ((~ (IData)(vlSelf->testbench__DOT__clk_i)) 
-                                      & (IData)(vlSelf->__Vtrigrprev__TOP__testbench__DOT__clk_i));
-    vlSelf->__VactTriggered.at(1U) = ((~ (IData)(vlSelf->testbench__DOT__reset_i)) 
-                                      & (IData)(vlSelf->__Vtrigrprev__TOP__testbench__DOT__reset_i));
-    vlSelf->__VactTriggered.at(2U) = ((IData)(vlSelf->testbench__DOT__reset_i) 
-                                      & (~ (IData)(vlSelf->__Vtrigrprev__TOP__testbench__DOT__reset_i)));
-    vlSelf->__VactTriggered.at(3U) = ((IData)(vlSelf->testbench__DOT__dut__DOT__clk_o) 
+    vlSelf->__VactTriggered.at(0U) = ((IData)(vlSelf->testbench__DOT__dut__DOT__clk_o) 
                                       & (~ (IData)(vlSelf->__Vtrigrprev__TOP__testbench__DOT__dut__DOT__clk_o)));
-    vlSelf->__VactTriggered.at(4U) = vlSelf->__VdlySched.awaitingCurrentTime();
-    vlSelf->__Vtrigrprev__TOP__testbench__DOT__clk_i 
-        = vlSelf->testbench__DOT__clk_i;
-    vlSelf->__Vtrigrprev__TOP__testbench__DOT__reset_i 
-        = vlSelf->testbench__DOT__reset_i;
+    vlSelf->__VactTriggered.at(1U) = vlSelf->__VdlySched.awaitingCurrentTime();
     vlSelf->__Vtrigrprev__TOP__testbench__DOT__dut__DOT__clk_o 
         = vlSelf->testbench__DOT__dut__DOT__clk_o;
 #ifdef VL_DEBUG

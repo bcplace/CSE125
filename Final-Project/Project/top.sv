@@ -95,7 +95,7 @@ module top
      /*nonsynth_clock_gen
      #(.cycle_time_p(44))
    cg
-     (.clk_o(clk_o));*/
+     (.clk_o(clk_o));
   /* verilator lint_off WIDTH */
    assign axis_clk = clk_o;
    axis_i2s2 
@@ -130,21 +130,16 @@ module top
      logic [3:0] kpyd2ssd_col_w;
      
      logic [23:0] lowB;
-     logic Blast;
-     logic Bvalid;
      logic [23:0] D;
-     logic Dlast;
-     logic Dvalid;
      logic [23:0] highE;
-     logic highElast;
-     logic highEvalid;
      logic [23:0] E;
-     logic Elast;
-     logic Evalid;
+     
+     logic [31:0] frequency_step;
      
      
      logic [3:0] row_sync;
      logic [3:0] col_sync;
+     //logic reset_i = 1'b0;
   
      shift
      #(.depth_p(4), .reset_val_p(4'b1110))
@@ -156,93 +151,54 @@ module top
 
      always_comb begin
       kpyd2ssd_col_w = shift_o;
-      case(kpyd_row_i)
-          4'b0111 : kpyd2ssd_row_w = 4'b1000;
-          4'b1011 : kpyd2ssd_row_w = 4'b0100;
-          4'b1101 : kpyd2ssd_row_w = 4'b0010;
-          4'b1110 : kpyd2ssd_row_w = 4'b0001;
-          default : kpyd2ssd_row_w = 4'b0000;
-      endcase
-     
      end
      assign kpyd_col_o = kpyd2ssd_col_w;
   
-     always @(posedge axis_clk) begin
-       row_sync <= kpyd2ssd_row_w;
-       col_sync <= ~kpyd2ssd_col_w;
+     always_ff @(posedge axis_clk) begin
+       row_sync <= kpyd_row_i;
+       col_sync <= kpyd2ssd_col_w;
        case({row_sync, col_sync})
-         8'b01000001 : begin 
-                       axis_tx_data <= lowB;
-                       axis_tx_last <= Blast;
-                       axis_tx_valid <= Bvalid;
+         8'b01111110 : begin 
+                       frequency_step <= 32'h0D8050F;
                        end
-         8'b00010001 : begin 
-                       axis_tx_data <= D;
-                       axis_tx_last <= Dlast;
-                       axis_tx_valid <= Dvalid;
+         8'b10111110 : begin 
+                       frequency_step <= 32'h100E6B0;
                        end
-         8'b00010010 : begin 
-                       axis_tx_data <= highE;
-                       axis_tx_last <= highElast;
-                       axis_tx_valid <= highEvalid;
+         8'b11011110 : begin
+                       frequency_step <= 32'h1205BC0;
                        end
-         8'b10000001 : begin
-                       axis_tx_data <= E;
-                       axis_tx_last <= Elast;
-                       axis_tx_valid <= Evalid;
+         8'b11101110 : begin
+                       frequency_step <= 32'h0C073F9;
+                       end
+         8'b01111011 : begin
+                       frequency_step <= 32'h156EC76;
+                       end
+         8'b10111011 : begin
+                       frequency_step <= 32'h1B00D79;
+                       end
+         8'b11011011 : begin
+                       frequency_step <= 32'hA1D5A8;
+                       end
+         8'b11101011 : begin
+                       frequency_step <= 32'hF27BB3;
                        end
          default : begin 
-                       axis_tx_data <= 24'd0;
-                       axis_tx_last <= '0;
-                       axis_tx_valid <= '0;
-                       end
+                       frequency_step <= 32'd0;
+                   end
         endcase
      end
 
      
      sine
-     #(.frequency_step(32'h0AD512)) //Freq_step = ((2^32) * (frequency/99.5KHz))
      LowB
      (.clk_i(axis_clk),
-     .axis_last(Blast),
+     .axis_last(axis_tx_last),
+     .frequency_step(frequency_step),
      .reset_i(reset_r),
      .ready_i(axis_tx_ready),
-     .valid_o(Bvalid),
-     .sine_o(lowB));
+     .valid_o(axis_tx_valid),
+     .sine_o(axis_tx_data));
      
-     sine
-     #(.frequency_step(32'h0CE1B9)) //Freq_step = ((2^32) * (frequency/99.5KHz))
-     Dnote
-     (.clk_i(axis_clk),
-     .axis_last(Dlast),
-     .reset_i(reset_r),
-     .ready_i(axis_tx_ready),
-     .valid_o(Dvalid),
-     .sine_o(D));
-     
-     sine
-     #(.frequency_step(32'h01CEB50)) //Freq_step = ((2^32) * (frequency/99.5KHz))
-     eHigh
-     (.clk_i(axis_clk),
-     .axis_last(highElast),
-     .reset_i(reset_r),
-     .ready_i(axis_tx_ready),
-     .valid_o(highEvalid),
-     .sine_o(highE));
-     
-     sine
-     #(.frequency_step(32'h0E758B)) //Freq_step = ((2^32) * (frequency/99.5KHz))
-     Enote
-     (.clk_i(axis_clk),
-     .axis_last(Elast),
-     .reset_i(reset_r),
-     .ready_i(axis_tx_ready),
-     .valid_o(Evalid),
-     .sine_o(E));
-     
-    
-     
-     //assign axis_tx_last = 1'b0;
              
 
 endmodule
