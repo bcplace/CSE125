@@ -1,10 +1,10 @@
 module statemachine
-#(parameter = width_p)
-(input [0:0] startbutton
-.input [0:0] clk
-,input [0:0] reset
-,input [0:0] correct
-,output [width_p-1:0] 
+#(parameter = width_p) // can delete and just hardcode
+(input [0:0] startbutton_i
+.input [0:0] clk_i
+,input [0:0] reset_i
+,input [0:0] correct_i
+,output [width_p-1:0]    // some sort of addr or somethin
 ,output [3:0] score);
 
 typedef enum logic [2:0]{
@@ -24,6 +24,23 @@ typedef enum logic [2:0]{
 		iterations_l = 4'b0000;
 		score_l = 4'b0000;
 	end
+	
+	wire [2:0] random_number;
+	
+	lfsr
+	#(3)
+	lfsr_inst
+	(.clk_i(clk_i)
+	,.reset_i(reset_i)
+	,.data_o(random_number)
+	);
+	
+	logic [7:0] keys [7:0];
+	logic [7:0] random_key;
+	
+	initial $readmemh("keys.hex", keys);
+	
+	assign random_key = keys[random_number];
 	
 	always_comb begin
 		nstate_l = cstate_l;
@@ -50,7 +67,7 @@ typedef enum logic [2:0]{
 			// if incorrect
 			//	end game and go to done state
 			decide: begin
-				if (correct) begin
+				if (correct_i) begin
 					score_l = score_l + 1;
 					nstate_l = game;
 				end else begin
@@ -69,8 +86,8 @@ typedef enum logic [2:0]{
    
 	
 	// state machine reset ff
-	always_ff @(posedge clk) begin
-		if (reset) begin
+	always_ff @(posedge clk_i) begin
+		if (reset_i) begin
 			cstate_l <= init;
 		end else begin
 			cstate_l <= nstate_l;
