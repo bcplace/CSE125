@@ -1,6 +1,10 @@
 module statemachine
+#(parameter = width_p)
 (input [0:0] startbutton
+.input [0:0] clk
+,input [0:0] reset
 ,input [0:0] correct
+,output [width_p-1:0] 
 ,output [3:0] score);
 
 typedef enum logic [2:0]{
@@ -54,9 +58,9 @@ typedef enum logic [2:0]{
 				end
 			end
 			
-			// display score and wait for 
+			// display score and wait for reset
 			done: begin
-			
+				
 			end
 			
 			default: ;
@@ -65,8 +69,8 @@ typedef enum logic [2:0]{
    
 	
 	// state machine reset ff
-	always_ff @(posedge clk_i) begin
-		if (reset_i) begin
+	always_ff @(posedge clk) begin
+		if (reset) begin
 			cstate_l <= init;
 		end else begin
 			cstate_l <= nstate_l;
