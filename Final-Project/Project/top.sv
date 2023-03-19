@@ -159,28 +159,28 @@ module top
        col_sync <= kpyd2ssd_col_w;
        case({row_sync, col_sync})
          8'b01111110 : begin 
-                       frequency_step <= 32'h0D8050F;
-                       end
-         8'b10111110 : begin 
-                       frequency_step <= 32'h100E6B0;
-                       end
-         8'b11011110 : begin
-                       frequency_step <= 32'h1205BC0;
-                       end
-         8'b11101110 : begin
-                       frequency_step <= 32'h0C073F9;
-                       end
-         8'b01111011 : begin
-                       frequency_step <= 32'h156EC76;
-                       end
-         8'b10111011 : begin
                        frequency_step <= 32'h1B00D79;
                        end
+         8'b10111110 : begin 
+                       frequency_step <= 32'h201CD60;
+                       end
+         8'b11011110 : begin
+                       frequency_step <= 32'h240B780;
+                       end
+         8'b11101110 : begin
+                       frequency_step <= 32'h180E7F2;
+                       end
+         8'b01111011 : begin
+                       frequency_step <= 32'h2ADD591;
+                       end
+         8'b10111011 : begin
+                       frequency_step <= 32'h3601798;
+                       end
          8'b11011011 : begin
-                       frequency_step <= 32'hA1D5A8;
+                       frequency_step <= 32'h143AB50;
                        end
          8'b11101011 : begin
-                       frequency_step <= 32'hF27BB3;
+                       frequency_step <= 32'h1E4F766;
                        end
          default : begin 
                        frequency_step <= 32'd0;
