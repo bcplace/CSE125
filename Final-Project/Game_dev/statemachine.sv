@@ -1,113 +1,103 @@
 module statemachine
 //#(parameter = width_p) // can delete and just hardcode
-(input [0:0] startbutton_i
-.input [0:0] clk_i
+(input [0:0] clk_i
 ,input [0:0] reset_i
-,input [0:0] correct_i
+,input [0:0] startbutton_i
 //,output [width_p-1:0]    // some sort of addr or somethin
-,output [3:0] score);
+,output [31:0] fstep_o
+,output [0:0] second);
 
-typedef enum logic [2:0]{
-		init = 3'b000,
-		game = 3'b001,
-		userinput = 3'b010,
-		decide = 3'b011,
-		done = 3'b100
+// reset counter on transition to state (inside always ff)
+// use ff block to set counter, read only inside always comb
+
+
+// 25 bit counter to count for 1 sec
+
+	typedef enum logic [1:0]{
+		init = 2'b00,
+		playnote = 2'b01,
+		pause = 2'b10,
+		done = 2'b11
 		} state;
-		
-	state cstate_l,nstate_l; 
+	state cstate_l = init;
+	state nstate_l = init; 
 	
-	wire [3:0] score_l, iterations_l;
+	// song: A C A A | D A G A | E A A F | E C A E | A A G G | E B AAAAA 
 	
-	assign score = score_l;
+	logic [4:0] ncounter;
+	logic [31:0] notes_to_play [0:22]; // number of notes may change
+		 
+	initial $readmemh("notes.hex", notes_to_play);
 	
-	initial begin
-		iterations_l = 4'b0000;
-		score_l = 4'b0000;
-	end
+	logic [0:0] endofnotes; //assign to last index
+	assign endofnotes = (ncounter == 5'd22);
 	
-	wire [2:0] random_number;
+	logic [31:0] cfstep_l, nfstep_l;
 	
-	lfsr
-	#(3)
-	lfsr_inst
+	assign fstep_o = cfstep_l;
+	/* verilator lint_off UNUSEDSIGNAL */
+	logic [24:0] counterout;
+	/* verilator lint_on UNUSEDSIGNAL */
+	assign second = counterout[24];
+	
+	logic [0:0] counter_reset;
+	
+	counter
+	#(25)
+	counter_inst
 	(.clk_i(clk_i)
-	,.reset_i(reset_i)
-	,.data_o(random_number)
+	,.reset_i(reset_i | counter_reset)
+	,.up_i(1'b1)
+	,.down_i(1'b0)
+	,.counter_o(counterout)
 	);
 	
-	logic [7:0] notes [7:0];
-	logic [7:0] random_note;
-	
-	initial $readmemh("notes.hex", notes);
-	
-	assign random_note = notes[random_number];
-	
-	wire [7:0] fifo_o;
-	
-	fifo_1r1w
-	#(7,16)
-	fifo_usr_input
-	(.clk_i(clk_i)
-     ,.reset_i(reset_i)
-     ,.data_i(random_note)
-     ,.valid_i()
-     ,.ready_o()
-     ,.valid_o()
-     ,.data_o(fifo_o)
-     ,.yumi_i()
-	);
-	
+	/* verilator lint_off LATCH */
+	logic [0:0] test;
 	
 	always_comb begin
-		nstate_l = cstate_l;
-		case (cstate_l)
+		case (cstate_l) 
 			init: begin
-			// reset score at beginning of game
-				score_l = 4'b0000;
-			// if start button pressed : start game
-				if (startbutton) begin
-					nstate_l = game;
+				test = 1'b1;
+			// if start button pressed : start song
+				if (startbutton_i) begin
+					nstate_l = playnote;
 				end
 			end
 			
-			// use lfsr output to select 'random' sound from possible choices 
-			// load that corresponding keyboard input or raw sound into FIFO (get Blaise help on ready/valid)
-			// play that sound (discuss with Blaise)
-			// loop for number of iterations (after each correct response) 
-			game: begin
-				
-			end
-			
-			// wait for user input 
-			userinput: begin
-			// assume user data will come from outside of statemachine so is this needed?
-			end
-			
-			//pop/deq from FIFO for correctness check
-			// if equal correct stays high, if not it goes low
-			// if correct
-			//	add a point, continue game, and inc # of sound playing iterations
-			// if incorrect
-			//	end game and go to done state
-			decide: begin
-			
-			
-				if (correct_i) begin
-					score_l = score_l + 1;
-					nstate_l = game;
-				end else begin
+			playnote: begin
+				test = 1'b0;
+				if (endofnotes) begin
 					nstate_l = done;
 				end
+				
+				nfstep_l = notes_to_play[ncounter];
+				
+				if (counterout[24]) begin
+					nstate_l = pause;
+				end
 			end
 			
-			// display score and wait for reset
-			done: begin
+			pause: begin
+				if (endofnotes) begin
+					nstate_l = done;
+				end
 				
+				nfstep_l = 32'h00000000;
+				
+				if (counterout[24]) begin
+					nstate_l = playnote;
+				end
+			end
+			
+			done: begin
+				// wait for reset
 			end
 			
 			default: ;
 		endcase
+		nstate_l = cstate_l;
+		nfstep_l = cfstep_l;
 	end
    
 	
@@ -115,15 +105,45 @@ typedef enum logic [2:0]{
 	always_ff @(posedge clk_i) begin
 		if (reset_i) begin
 			cstate_l <= init;
+			counter_reset <= 1'b0;
+			cfstep_l <= 32'h00000000;
 		end else begin
+			counter_reset <= 1'b0;
 			cstate_l <= nstate_l;
+			cfstep_l <= nfstep_l;
+		end
+		// 
+		if (cstate_l == init) begin
+			ncounter <= 5'b00000;
+			counter_reset <= 1'b0;
+		end else if ( (cstate_l == playnote) && (counterout[24]) ) begin
+			ncounter <= ncounter + 1;
+		end else if ( ( (cstate_l == playnote) || (cstate_l == pause ) ) && (counterout[24]) ) begin
+			counter_reset <= 1'b1;
 		end
 	end
-	
+       
+       
+endmodule
 
-   
-   	
-   	/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 	always_ff @(posedge clk_i) begin
 		if (cstate_l == idle) begin
 			wr_e_l <= 1'b1;
@@ -134,13 +154,33 @@ typedef enum logic [2:0]{
 	end
 	*/
    
-   
-   
-   
-   
-   
-   
-     
-       
-endmodule
-
+   // 23 states + 1 init
+/*
+typedef enum logic [4:0]{
+		init = 5'b00000,
+		s1 = 5'b00001,
+		s2 = 5'b00010,
+		s3 = 5'b00011,
+		s4 = 5'b00100,
+		s5 = 5'b00101,
+		s6 = 5'b00110,
+		s7 = 5'b00111,
+		s8 = 5'b01000,
+		s9 = 5'b01001,
+		s10 = 5'b01010,
+		s11 = 5'b01011,
+		s12 = 5'b01100,
+		s13 = 5'b01101,
+		s14 = 5'b01110,
+		s15 = 5'b01111,
+		s15 = 5'b10000,
+		s16 = 5'b10001,
+		s17 = 5'b10010,
+		s18 = 5'b10011,
+		s19 = 5'b10100,
+		s20 = 5'b10101,
+		s21 = 5'b10110,
+		s22 = 5'b10111,
+		s23 = 5'b11000,
+		} state;
+		*/
