@@ -136,8 +136,8 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024ro
                    >> 5U))) {
         __Vdly__testbench__DOT__dut__DOT__ncounter 
             = (0x1fU & ((IData)(1U) + (IData)(vlSelf->testbench__DOT__dut__DOT__ncounter)));
-    } else if ((((1U == (IData)(vlSelf->testbench__DOT__dut__DOT__nstate_l)) 
-                 | (2U == (IData)(vlSelf->testbench__DOT__dut__DOT__nstate_l))) 
+    } else if ((((1U == (IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l)) 
+                 | (2U == (IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l))) 
                 & (vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l 
                    >> 5U))) {
         vlSelf->testbench__DOT__dut__DOT__counter_reset = 1U;
