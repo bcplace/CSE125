@@ -38,7 +38,7 @@ module statemachine
 	/* verilator lint_off UNUSEDSIGNAL */
 	logic [24:0] playcounterout, pausecounterout;
 	/* verilator lint_on UNUSEDSIGNAL */
-	assign second = playcounterout[24];
+	assign second = (playcounterout[24] || pausecounterout[24]);
 	
 	logic [0:0] playcounterup, pausecounterup, playcounter_reset, pausecounter_reset;
 	
@@ -82,7 +82,7 @@ module statemachine
 				
 				nfstep_l = notes_to_play[ncounter];
 				// use 24 instead of 5 in counterout
-				if (playcounterout[5]) begin
+				if (playcounterout[24]) begin
 					nstate_l = pause;
 				end
 			end
@@ -94,7 +94,7 @@ module statemachine
 				
 				nfstep_l = 32'h00000000;
 				// use 24 instead of 5 in counterout
-				if (pausecounterout[5]) begin
+				if (pausecounterout[24]) begin
 					nstate_l = playnote;
 				end
 			end
@@ -134,12 +134,13 @@ module statemachine
 		end else if ( startbutton_i ) begin 
 			playcounterup <= 1'b1;
 				// use 24 instead of 5 in counterout
-		end else if ( (cstate_l == playnote) && (playcounterout[5]) ) begin
+		end else if ( (cstate_l == playnote) && (playcounterout[24]) ) begin
 			ncounter <= ncounter + 1;
 			playcounter_reset <= 1'b1;
 			playcounterup <= 1'b0;
 			pausecounterup <= 1'b1;
-		end else if ( (cstate_l == pause) && (pausecounterout[5]) ) begin
+				// use 24 instead of 5 in counterout
+		end else if ( (cstate_l == pause) && (pausecounterout[24]) ) begin
 			pausecounter_reset <= 1'b1;
 			pausecounterup <= 1'b0;
 			playcounterup <= 1'b1;
@@ -149,61 +150,3 @@ module statemachine
        
 endmodule
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-	always_ff @(posedge clk_i) begin
-		if (cstate_l == idle) begin
-			wr_e_l <= 1'b1;
-		end else if (cstate_l == wr_and_rd) begin
-			rd_e_l <= 1'b1;
-			rd_up_l <= 1'b1;
-		end
-	end
-	*/
-   
-   // 23 states + 1 init
-/*
-typedef enum logic [4:0]{
-		init = 5'b00000,
-		s1 = 5'b00001,
-		s2 = 5'b00010,
-		s3 = 5'b00011,
-		s4 = 5'b00100,
-		s5 = 5'b00101,
-		s6 = 5'b00110,
-		s7 = 5'b00111,
-		s8 = 5'b01000,
-		s9 = 5'b01001,
-		s10 = 5'b01010,
-		s11 = 5'b01011,
-		s12 = 5'b01100,
-		s13 = 5'b01101,
-		s14 = 5'b01110,
-		s15 = 5'b01111,
-		s15 = 5'b10000,
-		s16 = 5'b10001,
-		s17 = 5'b10010,
-		s18 = 5'b10011,
-		s19 = 5'b10100,
-		s20 = 5'b10101,
-		s21 = 5'b10110,
-		s22 = 5'b10111,
-		s23 = 5'b11000,
-		} state;
-		*/
