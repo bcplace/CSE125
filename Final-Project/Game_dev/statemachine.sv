@@ -56,17 +56,17 @@ module statemachine
 	logic [0:0] test;
 	
 	always @(posedge clk_i) begin
+		nstate_l = cstate_l;
+		nfstep_l = cfstep_l;
 		case (cstate_l) 
 			init: begin
 			// if start button pressed : start song
 				if (startbutton_i) begin
-					test = 1'b1;
 					nstate_l = playnote;
 				end
 			end
 			
 			playnote: begin
-				test = 1'b0;
 				if (endofnotes) begin
 					nstate_l = done;
 				end
@@ -96,8 +96,6 @@ module statemachine
 			
 			default: ;
 		endcase
-		nstate_l = cstate_l;
-		nfstep_l = cfstep_l;
 	end
    
 	
