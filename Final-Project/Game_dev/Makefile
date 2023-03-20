@@ -1,6 +1,6 @@
 # CSE x25 Final Project
-TOP_MODULE += top
-SYNTH_SOURCES += $(TOP_MODULE).sv
+#TOP_MODULE += top
+#SYNTH_SOURCES += $(TOP_MODULE).sv
 NONSYNTH_SOURCES += ../../provided_modules/nonsynth_clock_gen.sv
 NONSYNTH_SOURCES += ../../provided_modules/nonsynth_reset_gen.sv
 SYNTH_SOURCES += ../../provided_modules/axis_i2s2.v

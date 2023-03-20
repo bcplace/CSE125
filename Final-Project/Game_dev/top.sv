@@ -188,6 +188,7 @@ module top
      wire [0:0] second;
      
      statemachine
+     #("marylamb.hex",14)
      sm
      (.clk_i(axis_clk)
      ,.reset_i(reset_r)
