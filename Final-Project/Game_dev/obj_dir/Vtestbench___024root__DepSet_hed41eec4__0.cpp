@@ -100,14 +100,6 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024ro
     __Vdly__testbench__DOT__dut__DOT__ncounter = 0;
     // Body
     __Vdly__testbench__DOT__dut__DOT__ncounter = vlSelf->testbench__DOT__dut__DOT__ncounter;
-    if ((1U & (~ ((IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l) 
-                  >> 1U)))) {
-        if ((1U & (IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l))) {
-            vlSelf->testbench__DOT__dut__DOT__test = 0U;
-        } else if (vlSelf->testbench__DOT__startbutton_i) {
-            vlSelf->testbench__DOT__dut__DOT__test = 1U;
-        }
-    }
     vlSelf->testbench__DOT__dut__DOT__nfstep_l = vlSelf->testbench__DOT__dut__DOT__cfstep_l;
     vlSelf->testbench__DOT__dut__DOT__nstate_l = vlSelf->testbench__DOT__dut__DOT__cstate_l;
     if ((2U & (IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l))) {
@@ -116,7 +108,7 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024ro
             if ((0x16U == (IData)(vlSelf->testbench__DOT__dut__DOT__ncounter))) {
                 vlSelf->testbench__DOT__dut__DOT__nstate_l = 3U;
             }
-            if ((0x1000000U & vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l)) {
+            if ((0x20U & vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l)) {
                 vlSelf->testbench__DOT__dut__DOT__nstate_l = 1U;
             }
         }
@@ -129,7 +121,7 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024ro
         if ((0x16U == (IData)(vlSelf->testbench__DOT__dut__DOT__ncounter))) {
             vlSelf->testbench__DOT__dut__DOT__nstate_l = 3U;
         }
-        if ((0x1000000U & vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l)) {
+        if ((0x20U & vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l)) {
             vlSelf->testbench__DOT__dut__DOT__nstate_l = 2U;
         }
     } else if (vlSelf->testbench__DOT__startbutton_i) {
@@ -141,13 +133,13 @@ VL_INLINE_OPT void Vtestbench___024root___nba_sequent__TOP__3(Vtestbench___024ro
         vlSelf->testbench__DOT__dut__DOT__counter_reset = 0U;
     } else if (((1U == (IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l)) 
                 & (vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l 
-                   >> 0x18U))) {
+                   >> 5U))) {
         __Vdly__testbench__DOT__dut__DOT__ncounter 
             = (0x1fU & ((IData)(1U) + (IData)(vlSelf->testbench__DOT__dut__DOT__ncounter)));
-    } else if ((((1U == (IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l)) 
-                 | (2U == (IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l))) 
+    } else if ((((1U == (IData)(vlSelf->testbench__DOT__dut__DOT__nstate_l)) 
+                 | (2U == (IData)(vlSelf->testbench__DOT__dut__DOT__nstate_l))) 
                 & (vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l 
-                   >> 0x18U))) {
+                   >> 5U))) {
         vlSelf->testbench__DOT__dut__DOT__counter_reset = 1U;
     }
     if (vlSelf->testbench__DOT__reset_i) {

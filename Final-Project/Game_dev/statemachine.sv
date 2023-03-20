@@ -72,8 +72,8 @@ module statemachine
 				end
 				
 				nfstep_l = notes_to_play[ncounter];
-				
-				if (counterout[24]) begin
+				// use 24 instead of 5 in counterout
+				if (counterout[5]) begin
 					nstate_l = pause;
 				end
 			end
@@ -84,8 +84,8 @@ module statemachine
 				end
 				
 				nfstep_l = 32'h00000000;
-				
-				if (counterout[24]) begin
+				// use 24 instead of 5 in counterout
+				if (counterout[5]) begin
 					nstate_l = playnote;
 				end
 			end
@@ -114,9 +114,11 @@ module statemachine
 		if (cstate_l == init) begin
 			ncounter <= 5'b00000;
 			counter_reset <= 1'b0;
-		end else if ( (cstate_l == playnote) && (counterout[24]) ) begin
+				// use 24 instead of 5 in counterout
+		end else if ( (cstate_l == playnote) && (counterout[5]) ) begin
 			ncounter <= ncounter + 1;
-		end else if ( ( (cstate_l == playnote) || (cstate_l == pause ) ) && (counterout[24]) ) begin
+				// use 24 instead of 5 in counterout
+		end else if ( ( (nstate_l == playnote) || (nstate_l == pause ) ) && (counterout[5]) ) begin
 			counter_reset <= 1'b1;
 		end
 	end
