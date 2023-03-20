@@ -10,7 +10,6 @@ module statemachine
 // reset counter on transition to state (inside always ff)
 // use ff block to set counter, read only inside always comb
 
-
 // 25 bit counter to count for 1 sec
 
 	typedef enum logic [1:0]{
