@@ -35,7 +35,7 @@ VL_INLINE_OPT VlCoroutine Vtestbench___024root___eval_initial__TOP__0(Vtestbench
                                        54);
     co_await vlSelf->__VdlySched.delay(0x493e0U, "testbench.sv", 
                                        56);
-    co_await vlSelf->__VdlySched.delay(0x3938700U, 
+    co_await vlSelf->__VdlySched.delay(0x3dfd240U, 
                                        "testbench.sv", 
                                        58);
     VL_FINISH_MT("testbench.sv", 59, "");

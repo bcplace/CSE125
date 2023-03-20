@@ -55,7 +55,7 @@ startbutton_i = 1'b0;
 //keypad_row = 4'hB;
 #300
 //keypad_row = 4'h8;
-#60000
+#65000
 $finish();
 end
 
