@@ -101,11 +101,6 @@ VL_ATTR_COLD void Vtestbench___024root___stl_sequent__TOP__0(Vtestbench___024roo
     Vtestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtestbench___024root___stl_sequent__TOP__0\n"); );
     // Body
-    if ((1U & (~ ((IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l) 
-                  >> 1U)))) {
-        vlSelf->testbench__DOT__dut__DOT__test = (1U 
-                                                  & (~ (IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l)));
-    }
     vlSelf->testbench__DOT__rg__DOT__phase_lo_r = (2U 
                                                    == (IData)(vlSelf->testbench__DOT__rg__DOT__ctr_lo_r));
     vlSelf->testbench__DOT__rg__DOT__phase_hi_r = (2U 
@@ -113,33 +108,6 @@ VL_ATTR_COLD void Vtestbench___024root___stl_sequent__TOP__0(Vtestbench___024roo
     vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o 
         = (0x3ffffffU & (vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l 
                          + vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__addin_l));
-    if ((2U & (IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l))) {
-        if ((1U & (~ (IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l)))) {
-            if ((0x16U == (IData)(vlSelf->testbench__DOT__dut__DOT__ncounter))) {
-                vlSelf->testbench__DOT__dut__DOT__nstate_l = 3U;
-            }
-            if ((0x1000000U & vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l)) {
-                vlSelf->testbench__DOT__dut__DOT__nstate_l = 1U;
-            }
-            vlSelf->testbench__DOT__dut__DOT__nfstep_l = 0U;
-        }
-    } else if ((1U & (IData)(vlSelf->testbench__DOT__dut__DOT__cstate_l))) {
-        if ((0x16U == (IData)(vlSelf->testbench__DOT__dut__DOT__ncounter))) {
-            vlSelf->testbench__DOT__dut__DOT__nstate_l = 3U;
-        }
-        if ((0x1000000U & vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l)) {
-            vlSelf->testbench__DOT__dut__DOT__nstate_l = 2U;
-        }
-        vlSelf->testbench__DOT__dut__DOT__nfstep_l 
-            = ((0x16U >= (IData)(vlSelf->testbench__DOT__dut__DOT__ncounter))
-                ? vlSelf->testbench__DOT__dut__DOT__notes_to_play
-               [vlSelf->testbench__DOT__dut__DOT__ncounter]
-                : 0U);
-    } else if (vlSelf->testbench__DOT__startbutton_i) {
-        vlSelf->testbench__DOT__dut__DOT__nstate_l = 1U;
-    }
-    vlSelf->testbench__DOT__dut__DOT__nstate_l = vlSelf->testbench__DOT__dut__DOT__cstate_l;
-    vlSelf->testbench__DOT__dut__DOT__nfstep_l = vlSelf->testbench__DOT__dut__DOT__cfstep_l;
     vlSelf->testbench__DOT__reset_i = ((2U == (IData)(vlSelf->testbench__DOT__rg__DOT__ctr_lo_r)) 
                                        ^ (2U == (IData)(vlSelf->testbench__DOT__rg__DOT__ctr_hi_r)));
     vlSelf->testbench__DOT__dut__DOT____Vcellinp__counter_inst__reset_i 

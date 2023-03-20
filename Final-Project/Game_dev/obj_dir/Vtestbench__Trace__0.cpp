@@ -61,20 +61,20 @@ void Vtestbench___024root__trace_chg_sub_0(Vtestbench___024root* vlSelf, Verilat
         bufp->chgBit(oldp+30,((1U & (vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l 
                                      >> 0x18U))));
         bufp->chgCData(oldp+31,(vlSelf->testbench__DOT__dut__DOT__cstate_l),2);
-        bufp->chgCData(oldp+32,(vlSelf->testbench__DOT__dut__DOT__ncounter),5);
-        bufp->chgBit(oldp+33,((0x16U == (IData)(vlSelf->testbench__DOT__dut__DOT__ncounter))));
-        bufp->chgIData(oldp+34,(vlSelf->testbench__DOT__dut__DOT__nfstep_l),32);
-        bufp->chgIData(oldp+35,(vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l),25);
-        bufp->chgBit(oldp+36,(vlSelf->testbench__DOT__dut__DOT__counter_reset));
-        bufp->chgBit(oldp+37,(vlSelf->testbench__DOT__dut__DOT__test));
-        bufp->chgIData(oldp+38,((0x1ffffffU & vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o)),25);
-        bufp->chgBit(oldp+39,((1U & (vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o 
+        bufp->chgCData(oldp+32,(vlSelf->testbench__DOT__dut__DOT__nstate_l),2);
+        bufp->chgCData(oldp+33,(vlSelf->testbench__DOT__dut__DOT__ncounter),5);
+        bufp->chgBit(oldp+34,((0x16U == (IData)(vlSelf->testbench__DOT__dut__DOT__ncounter))));
+        bufp->chgIData(oldp+35,(vlSelf->testbench__DOT__dut__DOT__nfstep_l),32);
+        bufp->chgIData(oldp+36,(vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l),25);
+        bufp->chgBit(oldp+37,(vlSelf->testbench__DOT__dut__DOT__counter_reset));
+        bufp->chgBit(oldp+38,(vlSelf->testbench__DOT__dut__DOT__test));
+        bufp->chgIData(oldp+39,((0x1ffffffU & vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o)),25);
+        bufp->chgBit(oldp+40,((1U & (vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o 
                                      >> 0x19U))));
-        bufp->chgIData(oldp+40,(vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o),26);
+        bufp->chgIData(oldp+41,(vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o),26);
     }
-    bufp->chgBit(oldp+41,(vlSelf->testbench__DOT__clk_i));
-    bufp->chgBit(oldp+42,(vlSelf->testbench__DOT__startbutton_i));
-    bufp->chgCData(oldp+43,(vlSelf->testbench__DOT__dut__DOT__nstate_l),2);
+    bufp->chgBit(oldp+42,(vlSelf->testbench__DOT__clk_i));
+    bufp->chgBit(oldp+43,(vlSelf->testbench__DOT__startbutton_i));
     bufp->chgBit(oldp+44,(vlSelf->testbench__DOT__dut__DOT____Vcellinp__counter_inst__reset_i));
 }
 

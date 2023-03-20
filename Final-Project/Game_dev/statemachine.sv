@@ -55,12 +55,12 @@ module statemachine
 	/* verilator lint_off LATCH */
 	logic [0:0] test;
 	
-	always_comb begin
+	always @(posedge clk_i) begin
 		case (cstate_l) 
 			init: begin
-				test = 1'b1;
 			// if start button pressed : start song
 				if (startbutton_i) begin
+					test = 1'b1;
 					nstate_l = playnote;
 				end
 			end

@@ -12,19 +12,19 @@ VL_ATTR_COLD void Vtestbench___024root__trace_init_sub__TOP__0(Vtestbench___024r
     const int c = vlSymsp->__Vm_baseCode;
     // Body
     tracep->pushNamePrefix("testbench ");
-    tracep->declBit(c+42,"clk_i",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
+    tracep->declBit(c+43,"clk_i",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
     tracep->declBit(c+25,"reset_i",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
-    tracep->declBit(c+43,"startbutton_i",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
+    tracep->declBit(c+44,"startbutton_i",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
     tracep->declBus(c+30,"fstep_o",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
     tracep->declBit(c+31,"second",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
     tracep->pushNamePrefix("cg ");
     tracep->declBus(c+46,"cycle_time_p",-1, FST_VD_IMPLICIT,FST_VT_VCD_PARAMETER, false,-1, 31,0);
-    tracep->declBit(c+42,"clk_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+43,"clk_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("dut ");
-    tracep->declBus(c+42,"clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
+    tracep->declBus(c+43,"clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
     tracep->declBus(c+25,"reset_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
-    tracep->declBus(c+43,"startbutton_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
+    tracep->declBus(c+44,"startbutton_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
     tracep->declBus(c+30,"fstep_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+31,"second",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
     {
@@ -35,33 +35,33 @@ VL_ATTR_COLD void Vtestbench___024root__trace_init_sub__TOP__0(Vtestbench___024r
         tracep->declDTypeEnum(1, "statemachine.state", 4, 2, __VenumItemNames, __VenumItemValues);
     }
     tracep->declBus(c+32,"cstate_l",1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 1,0);
-    tracep->declBus(c+44,"nstate_l",1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 1,0);
-    tracep->declBus(c+33,"ncounter",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 4,0);
+    tracep->declBus(c+33,"nstate_l",1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 1,0);
+    tracep->declBus(c+34,"ncounter",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 4,0);
     for (int i = 0; i < 23; ++i) {
         tracep->declBus(c+1+i*1,"notes_to_play",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, true,(i+0), 31,0);
     }
-    tracep->declBus(c+34,"endofnotes",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 0,0);
+    tracep->declBus(c+35,"endofnotes",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 0,0);
     tracep->declBus(c+30,"cfstep_l",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
-    tracep->declBus(c+35,"nfstep_l",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
-    tracep->declBus(c+36,"counterout",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 24,0);
-    tracep->declBus(c+37,"counter_reset",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 0,0);
-    tracep->declBus(c+38,"test",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 0,0);
+    tracep->declBus(c+36,"nfstep_l",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
+    tracep->declBus(c+37,"counterout",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 24,0);
+    tracep->declBus(c+38,"counter_reset",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 0,0);
+    tracep->declBus(c+39,"test",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 0,0);
     tracep->pushNamePrefix("counter_inst ");
     tracep->declBus(c+47,"width_p",-1, FST_VD_IMPLICIT,FST_VT_VCD_PARAMETER, false,-1, 31,0);
-    tracep->declBus(c+42,"clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
+    tracep->declBus(c+43,"clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
     tracep->declBus(c+45,"reset_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
     tracep->declBus(c+48,"up_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
     tracep->declBus(c+49,"down_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
-    tracep->declBus(c+36,"counter_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 24,0);
-    tracep->declBus(c+39,"dffin_l",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 24,0);
-    tracep->declBus(c+36,"dffout_l",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 24,0);
+    tracep->declBus(c+37,"counter_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 24,0);
+    tracep->declBus(c+40,"dffin_l",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 24,0);
+    tracep->declBus(c+37,"dffout_l",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 24,0);
     tracep->declBus(c+24,"addin_l",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 24,0);
-    tracep->declBus(c+40,"ofv",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 0,0);
+    tracep->declBus(c+41,"ofv",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 0,0);
     tracep->pushNamePrefix("adder_inst ");
     tracep->declBus(c+47,"width_p",-1, FST_VD_IMPLICIT,FST_VT_VCD_PARAMETER, false,-1, 31,0);
-    tracep->declBus(c+36,"a_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 24,0);
+    tracep->declBus(c+37,"a_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 24,0);
     tracep->declBus(c+24,"b_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 24,0);
-    tracep->declBus(c+41,"sum_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 25,0);
+    tracep->declBus(c+42,"sum_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 25,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("genblk1 ");
     tracep->popNamePrefix(3);
@@ -69,7 +69,7 @@ VL_ATTR_COLD void Vtestbench___024root__trace_init_sub__TOP__0(Vtestbench___024r
     tracep->declBus(c+50,"num_clocks_p",-1, FST_VD_IMPLICIT,FST_VT_VCD_PARAMETER, false,-1, 31,0);
     tracep->declBus(c+51,"reset_cycles_lo_p",-1, FST_VD_IMPLICIT,FST_VT_VCD_PARAMETER, false,-1, 31,0);
     tracep->declBus(c+51,"reset_cycles_hi_p",-1, FST_VD_IMPLICIT,FST_VT_VCD_PARAMETER, false,-1, 31,0);
-    tracep->declBus(c+42,"clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
+    tracep->declBus(c+43,"clk_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 0,0);
     tracep->declBit(c+25,"async_reset_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+26,"ctr_lo_r",-1, FST_VD_IMPLICIT,FST_VT_SV_BIT, false,-1, 1,0);
     tracep->declBus(c+27,"ctr_hi_r",-1, FST_VD_IMPLICIT,FST_VT_SV_BIT, false,-1, 1,0);
@@ -153,19 +153,19 @@ VL_ATTR_COLD void Vtestbench___024root__trace_full_sub_0(Vtestbench___024root* v
     bufp->fullBit(oldp+31,((1U & (vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l 
                                   >> 0x18U))));
     bufp->fullCData(oldp+32,(vlSelf->testbench__DOT__dut__DOT__cstate_l),2);
-    bufp->fullCData(oldp+33,(vlSelf->testbench__DOT__dut__DOT__ncounter),5);
-    bufp->fullBit(oldp+34,((0x16U == (IData)(vlSelf->testbench__DOT__dut__DOT__ncounter))));
-    bufp->fullIData(oldp+35,(vlSelf->testbench__DOT__dut__DOT__nfstep_l),32);
-    bufp->fullIData(oldp+36,(vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l),25);
-    bufp->fullBit(oldp+37,(vlSelf->testbench__DOT__dut__DOT__counter_reset));
-    bufp->fullBit(oldp+38,(vlSelf->testbench__DOT__dut__DOT__test));
-    bufp->fullIData(oldp+39,((0x1ffffffU & vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o)),25);
-    bufp->fullBit(oldp+40,((1U & (vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o 
+    bufp->fullCData(oldp+33,(vlSelf->testbench__DOT__dut__DOT__nstate_l),2);
+    bufp->fullCData(oldp+34,(vlSelf->testbench__DOT__dut__DOT__ncounter),5);
+    bufp->fullBit(oldp+35,((0x16U == (IData)(vlSelf->testbench__DOT__dut__DOT__ncounter))));
+    bufp->fullIData(oldp+36,(vlSelf->testbench__DOT__dut__DOT__nfstep_l),32);
+    bufp->fullIData(oldp+37,(vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l),25);
+    bufp->fullBit(oldp+38,(vlSelf->testbench__DOT__dut__DOT__counter_reset));
+    bufp->fullBit(oldp+39,(vlSelf->testbench__DOT__dut__DOT__test));
+    bufp->fullIData(oldp+40,((0x1ffffffU & vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o)),25);
+    bufp->fullBit(oldp+41,((1U & (vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o 
                                   >> 0x19U))));
-    bufp->fullIData(oldp+41,(vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o),26);
-    bufp->fullBit(oldp+42,(vlSelf->testbench__DOT__clk_i));
-    bufp->fullBit(oldp+43,(vlSelf->testbench__DOT__startbutton_i));
-    bufp->fullCData(oldp+44,(vlSelf->testbench__DOT__dut__DOT__nstate_l),2);
+    bufp->fullIData(oldp+42,(vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o),26);
+    bufp->fullBit(oldp+43,(vlSelf->testbench__DOT__clk_i));
+    bufp->fullBit(oldp+44,(vlSelf->testbench__DOT__startbutton_i));
     bufp->fullBit(oldp+45,(vlSelf->testbench__DOT__dut__DOT____Vcellinp__counter_inst__reset_i));
     bufp->fullIData(oldp+46,(0x2cU),32);
     bufp->fullIData(oldp+47,(0x19U),32);
