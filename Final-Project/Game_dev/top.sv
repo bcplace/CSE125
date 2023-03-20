@@ -7,11 +7,6 @@ module top
   // async: Not synchronized to clock
   // unsafe: Not De-Bounced
   ,input [3:1] button_async_unsafe_i
-  
-  //KeyPad Stuff
-  ,input [3:0] kpyd_row_i
-  
-  ,output [3:0] kpyd_col_o
 
   // Line Out (Green)
   // Main clock (for synchronization)

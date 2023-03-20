@@ -10,7 +10,7 @@ reg second;
 
 nonsynth_clock_gen
 // used to be 44
-     #(.cycle_time_p(44))
+     #(.cycle_time_p(10))
    cg
      (.clk_o(clk_i));
 /**/
@@ -56,8 +56,6 @@ startbutton_i = 1'b0;
 //keypad_row = 4'hB;
 #300
 //keypad_row = 4'h8;
-//#500000
-//#500000
 #65000
 $finish();
 end

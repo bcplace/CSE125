@@ -4,16 +4,12 @@ module testbench();
 /* verilator lint_off PINMISSING */
 logic clk_i;
 logic reset_i;
-logic startbutton_i;
-reg [31:0] fstep_o;
-reg second;
+logic startbutton;
 
 nonsynth_clock_gen
-// used to be 44
      #(.cycle_time_p(44))
    cg
      (.clk_o(clk_i));
-/**/
 nonsynth_reset_gen
      #(.num_clocks_p(1)
        ,.reset_cycles_lo_p(2)
@@ -22,15 +18,10 @@ nonsynth_reset_gen
      (.clk_i(clk_i)
       ,.async_reset_o(reset_i));
       
-statemachine
+top
 #()
 dut
-(.clk_i(clk_i)
-,.reset_i(reset_i)
-,.startbutton_i(startbutton_i)
-,.fstep_o(fstep_o)
-,.second(second)
-);
+(.clk_12mhz_i(clk_i), .reset_n_async_unsafe_i(reset_i), .button_async_unsafe_i({1'b0,1'b0, startbutton}));
 
 
 initial begin 
@@ -40,15 +31,15 @@ initial begin
       $dumpfile("iverilog.vcd");
 `endif
       $dumpvars;
-//reset_i = 1'b1;
-startbutton_i = 1'b0;
-#200
 //reset_i = 1'b0;
+startbutton = 1'b0;
+#200
+//reset_i = 1'b1;
 //keypad_row = 4'hF;
 #300
-startbutton_i = 1'b1;
+startbutton = 1'b1;
 #100;
-startbutton_i = 1'b0;
+startbutton = 1'b0;
 //keypad_row = 4'hE;
 #300
 //keypad_row = 4'hD;
@@ -56,8 +47,6 @@ startbutton_i = 1'b0;
 //keypad_row = 4'hB;
 #300
 //keypad_row = 4'h8;
-//#500000
-//#500000
 #65000
 $finish();
 end

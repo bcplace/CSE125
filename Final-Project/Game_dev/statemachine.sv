@@ -1,9 +1,8 @@
 module statemachine
-//#(parameter = width_p) // can delete and just hardcode
+#(parameter FILE = "notes.hex", numberofnotes = 23) // can delete and just hardcode
 (input [0:0] clk_i
 ,input [0:0] reset_i
 ,input [0:0] startbutton_i
-//,output [width_p-1:0]    // some sort of addr or somethin
 ,output [31:0] fstep_o
 ,output [0:0] second);
 
@@ -24,12 +23,12 @@ module statemachine
 	// song: A C A A | D A G A | E A A F | E C A E | A A G G | E B AAAAA 
 	
 	logic [4:0] ncounter;
-	logic [31:0] notes_to_play [0:22]; // number of notes may change
+	logic [31:0] notes_to_play [0:numberofnotes-1]; // number of notes may change
 		 
-	initial $readmemh("notes.hex", notes_to_play);
+	initial $readmemh(FILE, notes_to_play);
 	
 	logic [0:0] endofnotes; //assign to last index
-	assign endofnotes = (ncounter == 5'd22);
+	assign endofnotes = (ncounter == (numberofnotes-1) );
 	
 	logic [31:0] cfstep_l, nfstep_l;
 	
@@ -61,9 +60,8 @@ module statemachine
 	,.counter_o(pausecounterout)
 	);
 	
-	/* verilator lint_off LATCH */
 	
-	always @(posedge clk_i) begin
+	always_comb begin
 		nstate_l = cstate_l;
 		nfstep_l = cfstep_l;
 		case (cstate_l) 
@@ -129,7 +127,6 @@ module statemachine
 			ncounter <= 5'b00000;
 			playcounter_reset <= 1'b0;
 			pausecounter_reset <= 1'b0;
-				// use 24 instead of 5 in counterout
 		end else if ( startbutton_i ) begin 
 			playcounterup <= 1'b1;
 				// use 24 instead of 5 in counterout
