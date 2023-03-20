@@ -1,0 +1,19 @@
+WARNING: sine.sv:23: Excess hex digits (2 of '0x000000') while reading 24-bit words.
+testbench.cg with cycle_time_p          44
+WARNING: statemachine.sv:28: Excess hex digits (2 of '0x0240B780') while reading 32-bit words.
+VCD info: dumpfile iverilog.vcd opened for output.
+VCD warning: $dumpvars: Unsupported argument type (vpiPackage)
+__________ ___________  _______________________________
+\______   \\_   _____/ /   _____/\_   _____/\__    ___/
+ |       _/ |    __)_  \_____  \  |    __)_   |    |   
+ |    |   \ |        \ /        \ |        \  |    |  0->1 time =         88
+ |____|_  //_______  //_______  //_______  /  |____|   
+ ASYNC  \/         \/         \/         \/            
+__________ ___________  _______________________________
+\______   \\_   _____/ /   _____/\_   _____/\__    ___/
+ |       _/ |    __)_  \_____  \  |    __)_   |    |   
+ |    |   \ |        \ /        \ |        \  |    |  1->0 time =        176
+ |____|_  //_______  //_______  //_______  /  |____|   
+ ASYNC  \/         \/         \/         \/            
+END OF TESTBENCH --------------------------
+Current System Time is: 02:49:47 AM--03/20/2023
