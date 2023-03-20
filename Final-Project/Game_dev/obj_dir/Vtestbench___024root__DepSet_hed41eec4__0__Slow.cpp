@@ -27,7 +27,8 @@ VL_ATTR_COLD void Vtestbench___024root___eval_static__TOP(Vtestbench___024root* 
     // Body
     vlSelf->testbench__DOT__dut__DOT__cstate_l = 0U;
     vlSelf->testbench__DOT__dut__DOT__nstate_l = 0U;
-    vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__addin_l = 0U;
+    vlSelf->testbench__DOT__dut__DOT__playcounter_inst__DOT__addin_l = 0U;
+    vlSelf->testbench__DOT__dut__DOT__pausecounter_inst__DOT__addin_l = 0U;
 }
 
 VL_ATTR_COLD void Vtestbench___024root___eval_final__TOP(Vtestbench___024root* vlSelf);
@@ -105,13 +106,25 @@ VL_ATTR_COLD void Vtestbench___024root___stl_sequent__TOP__0(Vtestbench___024roo
                                                    == (IData)(vlSelf->testbench__DOT__rg__DOT__ctr_lo_r));
     vlSelf->testbench__DOT__rg__DOT__phase_hi_r = (2U 
                                                    == (IData)(vlSelf->testbench__DOT__rg__DOT__ctr_hi_r));
-    vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o 
-        = (0x3ffffffU & (vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l 
-                         + vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__addin_l));
+    vlSelf->testbench__DOT__dut__DOT__playcounter_inst__DOT__addin_l 
+        = ((IData)(vlSelf->testbench__DOT__dut__DOT__playcounterup)
+            ? 1U : 0U);
+    vlSelf->testbench__DOT__dut__DOT__pausecounter_inst__DOT__addin_l 
+        = ((IData)(vlSelf->testbench__DOT__dut__DOT__pausecounterup)
+            ? 1U : 0U);
     vlSelf->testbench__DOT__reset_i = ((2U == (IData)(vlSelf->testbench__DOT__rg__DOT__ctr_lo_r)) 
                                        ^ (2U == (IData)(vlSelf->testbench__DOT__rg__DOT__ctr_hi_r)));
-    vlSelf->testbench__DOT__dut__DOT____Vcellinp__counter_inst__reset_i 
-        = ((IData)(vlSelf->testbench__DOT__dut__DOT__counter_reset) 
+    vlSelf->testbench__DOT__dut__DOT__playcounter_inst__DOT____Vcellout__adder_inst__sum_o 
+        = (0x3ffffffU & (vlSelf->testbench__DOT__dut__DOT__playcounter_inst__DOT__dffout_l 
+                         + vlSelf->testbench__DOT__dut__DOT__playcounter_inst__DOT__addin_l));
+    vlSelf->testbench__DOT__dut__DOT__pausecounter_inst__DOT____Vcellout__adder_inst__sum_o 
+        = (0x3ffffffU & (vlSelf->testbench__DOT__dut__DOT__pausecounter_inst__DOT__dffout_l 
+                         + vlSelf->testbench__DOT__dut__DOT__pausecounter_inst__DOT__addin_l));
+    vlSelf->testbench__DOT__dut__DOT____Vcellinp__playcounter_inst__reset_i 
+        = ((IData)(vlSelf->testbench__DOT__dut__DOT__playcounter_reset) 
+           | (IData)(vlSelf->testbench__DOT__reset_i));
+    vlSelf->testbench__DOT__dut__DOT____Vcellinp__pausecounter_inst__reset_i 
+        = ((IData)(vlSelf->testbench__DOT__dut__DOT__pausecounter_reset) 
            | (IData)(vlSelf->testbench__DOT__reset_i));
 }
 
@@ -203,12 +216,18 @@ VL_ATTR_COLD void Vtestbench___024root___ctor_var_reset(Vtestbench___024root* vl
     }
     vlSelf->testbench__DOT__dut__DOT__cfstep_l = VL_RAND_RESET_I(32);
     vlSelf->testbench__DOT__dut__DOT__nfstep_l = VL_RAND_RESET_I(32);
-    vlSelf->testbench__DOT__dut__DOT__counter_reset = VL_RAND_RESET_I(1);
-    vlSelf->testbench__DOT__dut__DOT____Vcellinp__counter_inst__reset_i = VL_RAND_RESET_I(1);
-    vlSelf->testbench__DOT__dut__DOT__test = VL_RAND_RESET_I(1);
-    vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__dffout_l = VL_RAND_RESET_I(25);
-    vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__addin_l = VL_RAND_RESET_I(25);
-    vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT____Vcellout__adder_inst__sum_o = VL_RAND_RESET_I(26);
+    vlSelf->testbench__DOT__dut__DOT__playcounterup = VL_RAND_RESET_I(1);
+    vlSelf->testbench__DOT__dut__DOT__pausecounterup = VL_RAND_RESET_I(1);
+    vlSelf->testbench__DOT__dut__DOT__playcounter_reset = VL_RAND_RESET_I(1);
+    vlSelf->testbench__DOT__dut__DOT__pausecounter_reset = VL_RAND_RESET_I(1);
+    vlSelf->testbench__DOT__dut__DOT____Vcellinp__playcounter_inst__reset_i = VL_RAND_RESET_I(1);
+    vlSelf->testbench__DOT__dut__DOT____Vcellinp__pausecounter_inst__reset_i = VL_RAND_RESET_I(1);
+    vlSelf->testbench__DOT__dut__DOT__playcounter_inst__DOT__dffout_l = VL_RAND_RESET_I(25);
+    vlSelf->testbench__DOT__dut__DOT__playcounter_inst__DOT__addin_l = VL_RAND_RESET_I(25);
+    vlSelf->testbench__DOT__dut__DOT__playcounter_inst__DOT____Vcellout__adder_inst__sum_o = VL_RAND_RESET_I(26);
+    vlSelf->testbench__DOT__dut__DOT__pausecounter_inst__DOT__dffout_l = VL_RAND_RESET_I(25);
+    vlSelf->testbench__DOT__dut__DOT__pausecounter_inst__DOT__addin_l = VL_RAND_RESET_I(25);
+    vlSelf->testbench__DOT__dut__DOT__pausecounter_inst__DOT____Vcellout__adder_inst__sum_o = VL_RAND_RESET_I(26);
     vlSelf->__Vtrigrprev__TOP__testbench__DOT__clk_i = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigrprev__TOP__testbench__DOT__reset_i = VL_RAND_RESET_I(1);
     for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {

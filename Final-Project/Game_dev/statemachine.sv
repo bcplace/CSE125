@@ -36,24 +36,33 @@ module statemachine
 	
 	assign fstep_o = cfstep_l;
 	/* verilator lint_off UNUSEDSIGNAL */
-	logic [24:0] counterout;
+	logic [24:0] playcounterout, pausecounterout;
 	/* verilator lint_on UNUSEDSIGNAL */
-	assign second = counterout[24];
+	assign second = playcounterout[24];
 	
-	logic [0:0] counter_reset;
+	logic [0:0] playcounterup, pausecounterup, playcounter_reset, pausecounter_reset;
 	
 	counter
 	#(25)
-	counter_inst
+	playcounter_inst
 	(.clk_i(clk_i)
-	,.reset_i(reset_i | counter_reset)
-	,.up_i(1'b1)
+	,.reset_i(reset_i | playcounter_reset)
+	,.up_i(playcounterup)
 	,.down_i(1'b0)
-	,.counter_o(counterout)
+	,.counter_o(playcounterout)
+	);
+	
+	counter
+	#(25)
+	pausecounter_inst
+	(.clk_i(clk_i)
+	,.reset_i(reset_i | pausecounter_reset)
+	,.up_i(pausecounterup)
+	,.down_i(1'b0)
+	,.counter_o(pausecounterout)
 	);
 	
 	/* verilator lint_off LATCH */
-	logic [0:0] test;
 	
 	always @(posedge clk_i) begin
 		nstate_l = cstate_l;
@@ -73,7 +82,7 @@ module statemachine
 				
 				nfstep_l = notes_to_play[ncounter];
 				// use 24 instead of 5 in counterout
-				if (counterout[5]) begin
+				if (playcounterout[5]) begin
 					nstate_l = pause;
 				end
 			end
@@ -85,7 +94,7 @@ module statemachine
 				
 				nfstep_l = 32'h00000000;
 				// use 24 instead of 5 in counterout
-				if (counterout[5]) begin
+				if (pausecounterout[5]) begin
 					nstate_l = playnote;
 				end
 			end
@@ -103,23 +112,37 @@ module statemachine
 	always_ff @(posedge clk_i) begin
 		if (reset_i) begin
 			cstate_l <= init;
-			counter_reset <= 1'b0;
+			playcounter_reset <= 1'b0;
+			pausecounter_reset <= 1'b0;
+			playcounterup <= 1'b0;
+			pausecounterup <= 1'b0;
 			cfstep_l <= 32'h00000000;
 		end else begin
-			counter_reset <= 1'b0;
+			playcounter_reset <= 1'b0;
+			pausecounter_reset <= 1'b0;
 			cstate_l <= nstate_l;
 			cfstep_l <= nfstep_l;
 		end
 		// 
 		if (cstate_l == init) begin
+			playcounterup <= 1'b0;
+			pausecounterup <= 1'b0;
 			ncounter <= 5'b00000;
-			counter_reset <= 1'b0;
+			playcounter_reset <= 1'b0;
+			pausecounter_reset <= 1'b0;
 				// use 24 instead of 5 in counterout
-		end else if ( (cstate_l == playnote) && (counterout[5]) ) begin
+		end else if ( startbutton_i ) begin 
+			playcounterup <= 1'b1;
+				// use 24 instead of 5 in counterout
+		end else if ( (cstate_l == playnote) && (playcounterout[5]) ) begin
 			ncounter <= ncounter + 1;
-				// use 24 instead of 5 in counterout
-		end else if ( ( (cstate_l == playnote) || (cstate_l == pause ) ) && (counterout[5]) ) begin
-			counter_reset <= 1'b1;
+			playcounter_reset <= 1'b1;
+			playcounterup <= 1'b0;
+			pausecounterup <= 1'b1;
+		end else if ( (cstate_l == pause) && (pausecounterout[5]) ) begin
+			pausecounter_reset <= 1'b1;
+			pausecounterup <= 1'b0;
+			playcounterup <= 1'b1;
 		end
 	end
        

@@ -22,7 +22,6 @@ VL_ATTR_COLD void Vtestbench___024root___eval_initial__TOP(Vtestbench___024root*
     VL_READMEM_N(true, 32, 23, 0, VL_CVT_PACK_STR_NW(3, __Vtemp_h917d1307__0)
                  ,  &(vlSelf->testbench__DOT__dut__DOT__notes_to_play)
                  , 0, ~0ULL);
-    vlSelf->testbench__DOT__dut__DOT__counter_inst__DOT__addin_l = 1U;
 }
 
 #ifdef VL_DEBUG
